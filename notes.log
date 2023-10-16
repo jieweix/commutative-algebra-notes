@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  12 OCT 2023 14:30
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  16 OCT 2023 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,14 +412,14 @@ OML/cmm/m/it/10 g[]; [] ; g[]\OMS/cmsy/m/n/10 g ^^R \OML/cmm/m/it/10 I$ \TU/lmr
 0 )\OMS/cmsy/m/n/10 i$\TU/lmr/m/n/10 . 
  []
 
-[3] [4] [5] [6] [7] (./notes.aux) ) 
+[3] [4] [5] [6] [7] [8] (./notes.aux) ) 
 Here is how much of TeX's memory you used:
- 5919 strings out of 476760
- 86578 string characters out of 5805258
- 1864482 words of memory out of 5000000
- 25990 multiletter control sequences out of 15000+600000
- 520440 words of font info for 78 fonts, out of 8000000 for 9000
+ 5921 strings out of 476760
+ 86626 string characters out of 5805258
+ 1863482 words of memory out of 5000000
+ 25991 multiletter control sequences out of 15000+600000
+ 520448 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,8n,63p,574b,273s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58i,8n,63p,575b,273s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.pdf (8 pages).
+Output written on notes.pdf (9 pages).

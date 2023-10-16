@@ -195,7 +195,7 @@ With this language, we can express Example 1.0.8 by saying `$\{x+y+z,x+2y+3z\}$ 
 \textit{Week 2, lecture 1 starts here}
 \end{flushright}
 
-\textbf{Division algorithm.}
+\subsection{Division algorithm}
 Let $S=K[x_1,\ldots,x_n]$.
 \begin{itemize}
 \item Input: $f_1,\ldots,f_s,f\in S$ and $\prec$ the term order
@@ -210,7 +210,7 @@ Let $S=K[x_1,\ldots,x_n]$.
 \item Loop: At each stage, if $\In_\prec(p)$ is divisible by some $\In_\prec(f_i)$, subtract $\frac{\In_\prec(p)}{\In_\prec(f_i)}f_i$ from $p$ and add $\frac{\In_\prec(p)}{\In_\prec(f_i)}$ to $h_i$.
 
 If $\In_\prec(p)$ is not divisible by any $\In_\prec(f_i)$, subtract it from $p$ and add it to $r$.
-\item Terminination: stop when $p=0$ and output $h_1,\ldots,h_s,r$.
+\item Termination: stop when $p=0$ and output $h_1,\ldots,h_s,r$.
 \end{enumerate}
 \end{itemize}
 \begin{example}
@@ -253,6 +253,7 @@ x^2=(x-y-z)(x+y+z)+(y+3z)(y-z)+4z^2.
 \end{enumerate}
 \end{example}
 The coming punchline is that if $f_i$'s are a Gröbner basis then remainder $r$ is unique.
+
 \begin{lemma}
 Let $I=\langle x^u:u\in A\rangle$ for some $A\subseteq \mathbb N^n$, then
 \begin{enumerate}
@@ -260,6 +261,7 @@ Let $I=\langle x^u:u\in A\rangle$ for some $A\subseteq \mathbb N^n$, then
 \item if $f=\sum c_v x^v\in I$, then each $x^v$ is divisible by $x^u$ for some $u\in A$
 \end{enumerate}
 \end{lemma}
+
 \begin{prop}
 If $\{g_1,\ldots,g_s\}$ is a Gröbner basis for $I$ with respect to $\prec$, then $f\in I$ iff the division algorithm dividing $f$ by $g_1,\ldots,g_s$ gives remainder 0.
 \end{prop}
@@ -275,9 +277,6 @@ If $\{g_1,\ldots,g_s\}$ is a Gröbner basis for $I$ with respect to $\prec$, the
 \end{flushright}
 
 \section{Noetherian ring}
-
-Goal: Every ideal $I$ in $\mathbb C[x_1,\ldots,x_n]$ has a finite Gröbner basis, i.e. $I$ is finitely generated.
-
 \begin{defn}
 A ring $R$ is \textit{Noetherian} if every ideal of $R$ is finitely generated.
 \end{defn}
@@ -286,20 +285,20 @@ A ring $R$ is \textit{Noetherian} if every ideal of $R$ is finitely generated.
 \item $\mathbb R$ and $\mathbb C$ are fields, so they only have two ideals $\langle 0\rangle,\langle 1\rangle$, so Noetherian.
 \item $\mathbb Z$ and $\mathbb C[x]$ are principal ideal domains, this implies they are Noetherian.
 \item $\mathbb C[x,y]$ and $\mathbb Z[x]$?
-\item $R:=\{f:\mathbb R\rightarrow\mathbb R:f\text{ continious}\}$, probably not?
+\item $R:=\{f:\mathbb R\rightarrow\mathbb R:f\text{ continuous}\}$, probably not?
 \item $\mathbb C[x_1,\ldots,x_n,\ldots]=\bigcup_{n=1}^{\infty} \mathbb C[x_1,\ldots,x_n]$, a polynomial ring which has infinite variables but finite nonzero terms.
 \end{enumerate}
 \end{example}
 
 \begin{defn}
-A ring $R$ satisfies \textit{ascending chain condition} (ACC) if every chain of ideals $I_1\subseteq I_2\subseteq \cdots \subseteq I_n\subseteq \cdots$ eventually stabilizes, i.e. $\exists n\in\mathbb N:I_m=I_n \ \forall m\geq n$, i.e. $\not\exists$ strictly ascending chain of ideals $I_1\subsetneqq I_2\subsetneqq \cdots \subsetneqq I_n \subsetneqq$.
+A ring $R$ satisfies \textit{ascending chain condition} (ACC) if every chain of ideals $I_1\subseteq I_2\subseteq \cdots \subseteq I_n\subseteq \cdots$ eventually stabilizes, i.e. $\exists n\in\mathbb N:I_m=I_n \ \forall m\geq n$, i.e. $\nexists$ strictly ascending chain of ideals $I_1\subsetneqq I_2\subsetneqq \cdots \subsetneqq I_n \subsetneqq$.
 \end{defn}
 \begin{prop}
 $R$ is Noetherian iff $R$ satisfies ACC.
 \end{prop}
 \begin{proof}
 \begin{itemize}
-\item[$\Rightarrow$] Let $I_1\subseteq I_2\subseteq \cdots \subseteq I_n\subseteq \cdots \lhd R$ and consider $J=\bigcup_{k=1}^\infty I_k$. Note $\forall r,s\in J,\ r\in I_j,\ s\in I_t$. WLOG assume $j\leq t$, then $r,s\in I_t$ and $r\pm s\in I_t\subset J$, and more generally $J\lhd R$. Since $J$ is finitely generated, we write $J=\langle f_1,\ldots,f_m\rangle$. By definition $f_i\in I_{n_i}$, so $\exists N:f_i\in I_N \ \forall i$, implying $J\subseteq I_N$. But $J$ is already the union of all ideals, so the chain must stablize at $I_N$.
+\item[$\Rightarrow$] Let $I_1\subseteq I_2\subseteq \cdots \subseteq I_n\subseteq \cdots \lhd R$ and consider $J=\bigcup_{k=1}^\infty I_k$. Note $\forall r,s\in J,\ r\in I_j,\ s\in I_t$. WLOG assume $j\leq t$, then $r,s\in I_t$ and $r\pm s\in I_t\subset J$, and more generally $J\lhd R$. Since $J$ is finitely generated, we write $J=\langle f_1,\ldots,f_m\rangle$. By definition $f_i\in I_{n_i}$, so $\exists N:f_i\in I_N \ \forall i$, implying $J\subseteq I_N$. But $J$ is already the union of all ideals, so the chain must stabilize at $I_N$.
 
 \item[$\Leftarrow$] Let $I\lhd R$ and suppose $I$ is not finitely generated. We know $\exists f_1\neq 0\in I$ and $I\neq \langle f_1\rangle$, also $\exists f_2\in I\backslash \langle f_1\rangle$ and $I\neq \langle f_1,f_2\rangle$. We can keep doing this and in general
 \[
@@ -352,7 +351,7 @@ a contradiction.
 If $R$ is Noetherian then $R[x]$ is Noetherian.
 \end{thm}
 \begin{proof}[Proof (nonexaminable)]
-Let $I\lhd R[x]$. Suppsoe $I$ is not finitely generated. $\exists f_1\in I$ with the minimal degree such that $I\neq \langle f_1\rangle$. Now choose $f_2\in I\backslash\langle f_1\rangle$ with the minimal degree so that $I\neq\langle f_1,f_2\rangle$. We proceed inductively and have
+Let $I\lhd R[x]$. Suppose $I$ is not finitely generated. $\exists f_1\in I$ with the minimal degree such that $I\neq \langle f_1\rangle$. Now choose $f_2\in I\backslash\langle f_1\rangle$ with the minimal degree so that $I\neq\langle f_1,f_2\rangle$. We proceed inductively and have
 \[
 \exists f_{n+1}\in I\backslash\langle f_1,\ldots,f_n\rangle \text{ with minimal degree so that } I\neq \langle f_1,\ldots,f_{n+1}\rangle.
 \]
@@ -403,4 +402,35 @@ In $\mathbb Z$, $\langle p\rangle$ where $p$ prime is a prime ideal by Euclid's 
 \textit{Week 3, lecture 1 starts here}
 \end{flushright}
 
+\subsection{Every ideal $I$ in $\mathbb C[x_1,\ldots,x_n]$ has a finite Gröbner basis}
+
+\begin{proof}[Proof of Lemma 1.1.3]
+Note that 1 is a special case of 2, so it suffices to prove the latter.
+
+If $f\in I$ write $f=\sum c_v x^v = \sum_{u\in A} h_u x^u$ with only finitely many $h_u\neq 0$. We expand the RHS as a sum of monomials, each monomial is divisible by some $x^u$ with $u\in A$. Hence the same is true for $x^v$ with $c_v\neq 0$ since these are terms remaining after cancellation.
+\end{proof}
+
+\begin{thm}[Dickson's lemma]
+Let $I=\langle x^u:u\in A\rangle \subseteq S=K[x_1,\ldots,x_n]$ for some $A\subseteq \mathbb N^n$. Then $\exists a_1,\ldots,a_s\in A$ with $I=\langle x^{a_1},\ldots,x^{a_s} \rangle$.
+\end{thm}
+Before diving into the proof let's think about two special cases.
+\begin{itemize}
+\item[$n=1$] Consider $I=\langle x_1^3,x_1^7,x_1^{70000},x_1^{1234},\ldots\rangle$. One can see that $x_1^3$ is sufficient to generate the whole $I$.
+\item[$n=2$] Consider $u,v\in\mathbb N^2$ as points on a lattice grid. Then $x^u$ is divisible by $x^v$ if it's top right of it, so we can get rid of unnecessary ones in a similar fashion.
+\end{itemize}
+Now let's turn these intuitions into a general proof.
+\begin{proof}[Proof by induction]
+Straightforwardly, when $n=1,\ I=\langle x_1^{\alpha_1}\rangle$ for $\alpha=\min \{j:x_j^I \}$. Now assume $n>1$ and the theorem is true for $n-1$.
+
+Write the variables in $S$ as $x_1,\ldots,x_{n-1},y$ and let $I$ be an ideal in $S$. Let $J=\langle x^u:x^uy^c\in I\text{ for some }c\geq 0\rangle\subseteq K[x_1,\ldots,x_{n-1}]$. By inductive hypothesis, $J$ is finitely generated, so write $J=\langle x^{a_{m_1}}, \ldots, x^{a_{m_r}}\rangle $ for $x^{a_{m_i}}y^{m_i}\in I$.
+
+Let $m=\max \{m_i\}$. For $0\leq l\leq m-1$, let $J_l=\langle x^u:x^u y^l\in I\rangle\subseteq K[x_1,\ldots,x_{n-1}]$. Again $J_l$ is finitely generated and write $J_l=\langle x^{a_{j_1}},\ldots,x^{a_{j_{r_l}}}\rangle$. We claim that $I$ is generated by $\{x^{a_{m_i}} y^{m_i}:1\leq i\leq r\} \cup \{x^{a_{j_i}}y^{j} : 1\leq j\leq m-1,\ 1\leq i\leq r_j\}$. Indeed, if $x^u y^j\in I$ then either
+\begin{enumerate}
+\item $j<m$, so $x^u\in J_j$, so  $x^{j_i} \mid x^u$ for some $i$, and so $x^{a_{j_i}} y^j\mid x^u y^j$.
+\item $j\geq m$, so $x^u\in J$, so $x^{a_{m_i}} \mid x^u$ for some $i$, and so since $m_i\leq m,\ x^{a_{m_i}} y^{m_i}\mid x^u y^j$.
+\end{enumerate}
+So every monomial in $I$ is a multiple of one of the claimed generators.
+
+If any of these generators is not in our original set $A$, we can replace it by a monomial with exponent in $A$, and by Lemma 1.1.3 if they generate all monomials then they generate the whole $I$.
+\end{proof}
 \end{document}
