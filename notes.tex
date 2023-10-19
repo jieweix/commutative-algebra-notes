@@ -8,6 +8,7 @@
 \usepackage[all]{xy}
 \usepackage{color}
 \usepackage{geometry}
+\usepackage{stmaryrd}
 
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -30,6 +31,7 @@
 \newcommand{\spanset}{\text{span}}
 \newcommand{\rank}{\text{rank }}
 \newcommand{\Mod}{\text{ mod }}
+\newcommand{\Spec}{\text{Spec}}
 
 \theoremstyle{definition}
 
@@ -39,6 +41,8 @@
 \newtheorem{lemma}[defn]{Lemma}
 \newtheorem{coro}[defn]{Corollary}
 \newtheorem{example}[defn]{Example}
+\newtheorem{axiom}[defn]{Axiom}
+\newtheorem{exe}[defn]{Exercise}
 \newtheorem*{remark}{Remark}
 \newtheorem*{notation}{Notation}
 
@@ -238,7 +242,7 @@ x+2y+3z=1(x+y+z)+\frac15 (5y+3z) + \frac75 z.
 \end{enumerate}
 \end{example}
 \begin{example}
-Divide $f=x^2$ by $f_1=x+y+z$ and $f_2=y-z$ with $\prec_\text{tex}$ and $x\succ y\succ z$.
+Divide $f=x^2$ by $f_1=x+y+z$ and $f_2=y-z$ with $\prec_\text{lex}$ and $x\succ y\succ z$.
 \begin{enumerate}
 \item $h_1=h_2=r=0,\ p=f=x^2$
 \item $p=p-\frac{\In_\prec(p)}{\In_\prec(f_1)}f_1=x^2-\frac{x^2}{x}(x+y+z)=-xy-xz,\ h_1=0+x=x$
@@ -347,7 +351,7 @@ Suppose $\exists J_1\subsetneqq \cdots \subsetneqq J_n\subsetneqq\cdots\lhd R/I$
 \]
 a contradiction.
 \end{proof}
-\begin{thm}[Hilbert bases theorem]
+\begin{thm}[Hilbert basis theorem]
 If $R$ is Noetherian then $R[x]$ is Noetherian.
 \end{thm}
 \begin{proof}[Proof (nonexaminable)]
@@ -433,4 +437,155 @@ So every monomial in $I$ is a multiple of one of the claimed generators.
 
 If any of these generators is not in our original set $A$, we can replace it by a monomial with exponent in $A$, and by Lemma 1.1.3 if they generate all monomials then they generate the whole $I$.
 \end{proof}
+
+\begin{flushright}
+\textit{Week 3, lecture 2 starts here}
+\end{flushright}
+
+\begin{coro}
+Every ideal in $S=K[x_1,\ldots,x_n]$ has a finite Gröbner basis with respect to a term order.
+\end{coro}
+\begin{proof}
+The initial ideal in $\In_\prec(I)=\langle \In_\prec(f):f\in I\rangle$ is a monomial ideal (using that coefficients can be omitted since we are in a field). By Dickson's lemma, there are $g_1,\ldots,g_s\in I$ with $\langle \In_\prec(g_1),\ldots,\In_\prec(g_s)\rangle=\In_\prec(I)$. Thus $\{g_1,\ldots,g_s\}$ is a Gröbner basis for $I$ by definition.
+\end{proof}
+
+\begin{prop}
+If $\{g_1,\ldots,g_2\}$ is a Gröbner basis for $I$ with respect to $\prec$, then $I=\langle g_1,\ldots,g_2\rangle$.
+\end{prop}
+\begin{proof}
+By division algorithm, any $f\in I$ can be written as $f=\sum h_i g_i$ with remainder 0 since $f\in I$. It follows that $f\in\langle g_1,\ldots,g_s\rangle$, which gives the desired since $f$ is arbitrary.
+\end{proof}
+
+\begin{coro}[Special case of Hilbert basis theorem]
+Every ideal in $S=K[x_1,\ldots,x_n]$ is finitely generated.
+\end{coro}
+\begin{proof}
+Immediate from previous two results.
+\end{proof}
+\begin{exe}
+Claim: $y=\left\{\underline{x_2}^2-x_1x_3,\underline{x_2x_3}-x_1x_4,\underline{x_3^2}-x_2x_4\right\}$ is a Gröbner basis with respect to revlex. Find the remainder on dividing $x_2^2x_3^2$ by $y$.
+
+\[
+\begin{aligned}
+f_1:& x_2^2x_3^2 \xrightarrow{f_1} x_1x_3\xrightarrow{f_3}x_1x_2x_3x_4\xrightarrow{f_2}x_1^2x_4^2 \\
+f_2:& x_2^2x_3^2 \xrightarrow{f_2} x_1x_2x_3x_4\xrightarrow{f_2} x_1^2x_4^2 \\
+f_3:& x_2^2x_3^2 \xrightarrow{f_3}x_2^3x_4\xrightarrow{f_1}x_1x_2x_3x_4\xrightarrow{f_2}x_1^2x_4^2
+\end{aligned}
+\]
+
+The remainders are the same: this shouldn't surprise us. But we haven't proved it, so why did this work?
+\end{exe}
+
+\section{General commutative rings}
+\begin{defn}
+An ideal $I\subseteq R$ is \textit{prime} if it's proper and $f,g\in I\Rightarrow f$ or $g\in I$.
+\end{defn}
+\begin{notation}
+$\Spec(R):=\{\text{prime ideals in }R\}$.
+\end{notation}
+\begin{example}
+$R=\mathbb Z/6\mathbb Z,\ \Spec(R)=\{\langle 2\rangle,\langle 3\rangle\}$.  Note that although 5 is prime but $\langle 5\rangle$ is not a prime ideal since $5^2=1$ in $\mathbb Z/6\mathbb Z$ so it's not proper.
+\end{example}
+\begin{lemma}
+An ideal $P\subseteq R$ is prime iff $R/P$ is a domain.
+\end{lemma}
+\begin{proof}
+$P$ is prime iff
+\[
+fg\in P\Rightarrow f \text{ or } g\in P. \tag{$\ast$}
+\]
+$R/P$ is a domain iff $fg+P=0+P \Rightarrow f+P$ or $g+P=0+P$, which is equivalent to $(\ast)$.
+\end{proof}
+
+\begin{defn}
+An ideal $I\subseteq R$ is \textit{maximal} if it's proper and there is no ideal $J:I\subsetneq J\subsetneq R$.
+\end{defn}
+
+Do maximal ideals always exist? Yes, if we assume axiom of choice.
+
+Recall: a \textit{partially ordered} set is a set $S$ with transitive, reflexive binary relation $\leq$ (e.g. $\leq$ on $\mathbb R$ or power set (inclusion)). Given a subset $U\subseteq S$, an \textit{upper bound} for $U$ is $s\in S$ with $u\leq s \ \forall u\in U$. An element $m\in S$ is \textit{maximal} if $\nexists s\in S$ with $s>m$.
+
+\begin{axiom}[Zorn's lemma]
+Let $S$ be a nonempty partially ordered set with the property that any totally ordered subset $U\subseteq S$ (a `chain') has an upper bound. Then $S$ has a maximal element.
+\end{axiom}
+
+This is equivalent to:
+\begin{enumerate}
+\item The axiom of choice: every product $\prod_{a\in A} S_a$ of nonempty sets is nonempty.
+\item Well-ordering principle: every set can be well-ordered.
+\end{enumerate}
+
+\begin{flushright}
+\textit{Week 3, lecture 3 starts here}
+\end{flushright}
+
+\begin{prop}
+Let $R$ be a ring and let $I$ be a proper ideal of $R$. Then there is a maximal ideal $M$ containing $I$.
+\end{prop}
+\begin{proof}
+Let $\mathcal I$ be the set of proper ideals in $R$ containing $I$, ordered by inclusion ($J_1\leq J_2$ if $J_1\subseteq J_2$). Note that if $\{J_\alpha:\alpha\in A\}$ is a totally ordered (any two are comparable) subset of $\mathcal I$ then $J=\bigcup_{\alpha\in A}J_\alpha$ is an ideal. [$\lightning$ this uses the total order, e.g. in $K[x,y],\ \langle x\rangle \cup\langle y\rangle$ is not an ideal since $x+y$ is not in there.] Since $J_\alpha\subseteq J \ \forall \alpha$ and $I\subseteq J$, one has $J\in \mathcal I$. Hence $J$ is an upper bound for $\{J_\alpha\}$. Thus by Zorn's lemma, $\mathcal I$ has a maximal element.
+\end{proof}
+
+\begin{lemma}
+$I\subseteq R$ is maximal iff $R/I$ is a field.
+\end{lemma}
+\begin{proof}
+Exercise (see Algebra II notes).
+\end{proof}
+
+\begin{coro}
+Maximal ideals are prime.
+\end{coro}
+\begin{proof}
+If $I$ is maximal then $R/I$ is a field, and in particular a domain.
+\end{proof}
+
+\begin{defn}
+A ring $R$ is \textit{local} if it has a unique maximal ideal $M$.
+\end{defn}
+\begin{example}
+Every field is local. $\mathbb Z$ is not local since $\langle2\rangle,\langle 3\rangle$ are both maximal.
+
+Consider
+\[
+\mathbb Z_{\langle 2\rangle}:=\left\{ \frac{a}{b}\in\mathbb Q:a,b\in\mathbb Z,\ 2\nmid b \right\}.
+\]
+This is a subring of $\mathbb Q$. Note that proper ideals are those generated by even integers, but $\langle 6\rangle=\langle 2\rangle$ since $\frac13 \in \mathbb Z_{\langle 2\rangle}$. So in fact they are all generated by powers of 2, and $\langle 2\rangle$ is maximal, so $\mathbb Z_{\langle 2\rangle}$ is local.
+
+$\mathbb C[x]$ is not local, since we can build (at least two) quotient rings which is a field by first isomorphism theorem, e.g. $\varphi_1 :x\rightarrow 1$ and $\varphi_2 :x\rightarrow i$.
+
+Now consider
+\[
+\mathbb C[x]_{\langle x\rangle}:= \left\{ \frac{f}{g}:f,g\in\mathbb C[x],\ x\nmid g \right\}.
+\]
+This is analogous to $\mathbb Z_\langle x\rangle$ and its proper ideals are of the form $\langle x^j\rangle$ with $\langle x\rangle$ being maximal.
+\end{example}
+\begin{defn}
+A set $U\subseteq R$ is \textit{multiplicatively closed} if $1\in U$ and $f,g\in U\Rightarrow fg\in U$.
+\end{defn}
+\begin{example}
+In any $R$ with $f\in R,\ U=\left\{1,f,f^2,\ldots\right\}$ is multiplicatively closed. 
+
+Suppose $P\subseteq R$ is prime. Then $1\notin P$, i.e. $1\in R\backslash P$, and $fg\in P\Rightarrow f$ or $g \in P$, so $f,g\in R\backslash P\Rightarrow fg\in R\backslash P$. By definition this means $R/P$ is multiplicatively closed.
+
+$U=\{r\in R:\exists s\in R:rs=1\}=\{\text{units of }R\}$ is multiplicatively closed. In particular, if $R$ is a domain then $U=R\backslash\{0\}$ is.
+\end{example}
+
+\begin{defn}
+Let $R$ be a ring and let $U\subseteq R$ be multiplicatively closed. Then
+\[
+R\left[U^{-1}\right]:=\left\{ \frac{r}{u}:r\in R,u\in U \right\}
+\]
+modulo the equivalence relation $\sim$
+\[
+\frac{r}{u}\sim\frac{r'}{u'} \quad\text{if}\quad \exists \tilde u \in U : \tilde u(ru'-r'u)=0.
+\]
+\end{defn}
+\begin{example}
+$R=\mathbb Z,\ U=\mathbb Z\backslash\{0\}$. Then $\mathbb R\left[U^{-1}\right]=\mathbb Q$. We don't have to worry about the $\tilde u$ condition since $\mathbb Z$ is a domain.
+
+$R=\mathbb Z,\ U=\mathbb Z\backslash \langle 2\rangle$. Then $R[U^{-1}]=\mathbb Z_{\langle 2\rangle}$.
+
+$R=\mathbb C[x],\ U=\mathbb C[x]\backslash \langle x\rangle$. Then $R[U^{-1}]=\mathbb C[x]_{\langle x\rangle}$.
+\end{example}
 \end{document}
