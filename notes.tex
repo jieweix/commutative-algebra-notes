@@ -794,4 +794,69 @@ If $N$ is a submodule of an $R$-module $M$, then it is also a subgroup of the ab
 \textit{Week 5, lecture 1 starts here}
 \end{flushright}
 
+\subsection{Free module}
+Recall that every finite dimensional $K$-vector space is isomorphic to $K^n$.
+\begin{defn}
+The $R$-module $R^n$ is defined to be
+\[
+\{(r_1,\ldots,r_n):r_i\in R\}
+\]
+with $R$-action
+\[
+r(r_1,\ldots,r_n)=(rr_1,\ldots,rr_n),\qquad (r_1,\ldots,r_n)+(r_1',\ldots,r_n')=(r_1+r_1',\ldots,r_n+r_n').
+\]
+\end{defn}
+
+\begin{remark}
+\begin{enumerate}
+\item More generally, for any index set $A$ (might be uncountable), $M_1:=\{(r_\alpha:\alpha\in A):r_\alpha\in R\}$ and $M_2:=\{(r_\alpha:\alpha\in A):r_\alpha\in R,\text{ only finitely many }r_\alpha\neq 0\}$ are $R$-modules.
+\item Note that every element of $R^n$ can be written as an $R$-linear combination of the standard basis $e_i$ as expected.
+\end{enumerate}
+\end{remark}
+
+\begin{defn}
+Let $M$ be an $R$-module and $y=\{m_\beta:\beta\in B\}\subseteq M$. Then $y$ \textit{generates} $M$ (as an $R$-module) if every element $m\in M$ can be written as
+\[
+m=\sum_{i=1}^s r_i m_{\beta_i} \text{ for some } \beta_1,\ldots,\beta_s\in B,\quad r_1,\ldots,r_s\in R.
+\] 
+Note that $B$ might be infinite but the sum must be finite.
+\end{defn}
+
+\begin{example}
+\begin{enumerate}
+\item If $R$ is a field then the verb generate is the same as `span' as in linear algebra.
+\item If $R=\mathbb Z$ then $y$ generates $M$ iff it generates $M$ as an abelian group.
+\item If $M=I\subseteq R$ is an ideal, then $y$ generates $M$ as an $R$-module iff $y$ generates $I$ as an ideal.
+\end{enumerate}
+\end{example}
+
+\begin{exe}
+\begin{enumerate}
+\item Give an example of an $R$-module $M$ with $y\subseteq M$ that generates $M$ as an $R$-module but not as an abelian group.
+
+Consider $M=R=\mathbb R$. Then $y=\{1\}$ generates $M$ as an $R$-module, but the abelian group it generates is $\mathbb Z\subsetneqq \mathbb R$.
+\item Generators for $M_1,M_2$ in above remark?
+\end{enumerate}
+\end{exe}
+
+\begin{defn}
+A set $y\subseteq M$ is a \textit{basis} for $M$ if $y$ generates $M$ as an $R$-module and every element of $M$ can be written uniquely as an $R$-linear combination of finitely many elements of $y$. Equivalently, if $\sum_{i=1}^s r_i g_i=0_M$ for $g_i\in y,\ r_i\in R$ then $r_i=0 \ \forall i=0$.
+\end{defn}
+
+\begin{example}
+\begin{enumerate}
+\item If $R$ is a field then a basis for $M$ as an $R$-module is a basis for $M$ as a $R$-vector space.
+\item A basis for $R^2$ is $\{(1,0),(0,1)\}$.
+\item $\{e_\alpha\}$ is a basis for $M_2$. It's not a basis for $M_1$ since the sum could be infinite. $\lightning$ There are modules with no basis (that's kind of the point of this section), e.g. $R=\mathbb C[x,y],\ M=\langle x,y\rangle$. Suppose $M$ has a basis $y$. First of all $|y|>1$ since $M$ is not a principal ideal. Now pick $f,g\in y$. Then $fg\in M$, but $fg=fg=gf$, so not uniquely expressed, a contradiction.
+\end{enumerate}
+\end{example}
+
+\begin{flushright}
+\textit{Week 5, lecture 2 starts here}
+\end{flushright}
+
+\begin{flushright}
+\textit{Week 5, lecture 3 starts here}
+\end{flushright}
+
 \end{document}
