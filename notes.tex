@@ -24,6 +24,7 @@
 \setlength{\parindent}{0 pt}
 
 \newcommand{\In}{\text{in}}
+\newcommand{\End}{\text{End}}
 \newcommand{\adj}{\text{adj}\ }
 \newcommand{\lcm}{\text{lcm}\ }
 \newcommand{\id}{\text{id}}
@@ -809,13 +810,13 @@ r(r_1,\ldots,r_n)=(rr_1,\ldots,rr_n),\qquad (r_1,\ldots,r_n)+(r_1',\ldots,r_n')=
 
 \begin{remark}
 \begin{enumerate}
-\item More generally, for any index set $A$ (might be uncountable), $M_1:=\{(r_\alpha:\alpha\in A):r_\alpha\in R\}$ and $M_2:=\{(r_\alpha:\alpha\in A):r_\alpha\in R,\text{ only finitely many }r_\alpha\neq 0\}$ are $R$-modules.
+\item More generally, for any index set $A$ (might be uncountable), $M_1:=\{(r_\alpha:\alpha\in A):r_\alpha\in R\}$ (functions $A\rightarrow R$) and $M_2:=\{(r_\alpha:\alpha\in A):r_\alpha\in R,\text{ only finitely many }r_\alpha\neq 0\}$ are $R$-modules.
 \item Note that every element of $R^n$ can be written as an $R$-linear combination of the standard basis $e_i$ as expected.
 \end{enumerate}
 \end{remark}
 
 \begin{defn}
-Let $M$ be an $R$-module and $y=\{m_\beta:\beta\in B\}\subseteq M$. Then $y$ \textit{generates} $M$ (as an $R$-module) if every element $m\in M$ can be written as
+Let $M$ be an $R$-module and $\mathcal G=\{m_\beta:\beta\in B\}\subseteq M$. Then $\mathcal G$ \textit{generates} $M$ (as an $R$-module) if every element $m\in M$ can be written as
 \[
 m=\sum_{i=1}^s r_i m_{\beta_i} \text{ for some } \beta_1,\ldots,\beta_s\in B,\quad r_1,\ldots,r_s\in R.
 \] 
@@ -825,29 +826,29 @@ Note that $B$ might be infinite but the sum must be finite.
 \begin{example}
 \begin{enumerate}
 \item If $R$ is a field then the verb generate is the same as `span' as in linear algebra.
-\item If $R=\mathbb Z$ then $y$ generates $M$ iff it generates $M$ as an abelian group.
-\item If $M=I\subseteq R$ is an ideal, then $y$ generates $M$ as an $R$-module iff $y$ generates $I$ as an ideal.
+\item If $R=\mathbb Z$ then $\mathcal G$ generates $M$ iff it generates $M$ as an abelian group.
+\item If $M=I\subseteq R$ is an ideal, then $\mathcal G$ generates $M$ as an $R$-module iff $g$ generates $I$ as an ideal.
 \end{enumerate}
 \end{example}
 
 \begin{exe}
 \begin{enumerate}
-\item Give an example of an $R$-module $M$ with $y\subseteq M$ that generates $M$ as an $R$-module but not as an abelian group.
+\item Give an example of an $R$-module $M$ with $g\subseteq M$ that generates $M$ as an $R$-module but not as an abelian group.
 
-Consider $M=R=\mathbb R$. Then $y=\{1\}$ generates $M$ as an $R$-module, but the abelian group it generates is $\mathbb Z\subsetneqq \mathbb R$.
+Consider $M=R=\mathbb R$. Then $\mathcal G=\{1\}$ generates $M$ as an $R$-module, but the abelian group it generates is $\mathbb Z\subsetneqq \mathbb R$.
 \item Generators for $M_1,M_2$ in above remark?
 \end{enumerate}
 \end{exe}
 
 \begin{defn}
-A set $y\subseteq M$ is a \textit{basis} for $M$ if $y$ generates $M$ as an $R$-module and every element of $M$ can be written uniquely as an $R$-linear combination of finitely many elements of $y$. Equivalently, if $\sum_{i=1}^s r_i g_i=0_M$ for $g_i\in y,\ r_i\in R$ then $r_i=0 \ \forall i=0$.
+A set $\mathcal G\subseteq M$ is a \textit{basis} for $M$ if $\mathcal G$ generates $M$ as an $R$-module and every element of $M$ can be written uniquely as an $R$-linear combination of finitely many elements of $\mathcal G$. Equivalently, if $\sum_{i=1}^s r_i g_i=0_M$ for $g_i\in \mathcal G,\ r_i\in R$ then $r_i=0 \ \forall i=0$.
 \end{defn}
 
 \begin{example}
 \begin{enumerate}
 \item If $R$ is a field then a basis for $M$ as an $R$-module is a basis for $M$ as a $R$-vector space.
 \item A basis for $R^2$ is $\{(1,0),(0,1)\}$.
-\item $\{e_\alpha\}$ is a basis for $M_2$. It's not a basis for $M_1$ since the sum could be infinite. $\lightning$ There are modules with no basis (that's kind of the point of this section), e.g. $R=\mathbb C[x,y],\ M=\langle x,y\rangle$. Suppose $M$ has a basis $y$. First of all $|y|>1$ since $M$ is not a principal ideal. Now pick $f,g\in y$. Then $fg\in M$, but $fg=fg=gf$, so not uniquely expressed, a contradiction.
+\item $\{e_\alpha\}$ is a basis for $M_2$. It's not a basis for $M_1$ since the sum could be infinite. $\lightning$ There are modules with no basis (that's kind of the point of this section), e.g. $R=\mathbb C[x,y],\ M=\langle x,y\rangle$. Suppose $M$ has a basis $\mathcal G$. First of all $|\mathcal G|>1$ since $M$ is not a principal ideal. Now pick $f,g\in \mathcal G$. Then $fg\in M$, but $fg=fg=gf$, so not uniquely expressed, a contradiction.
 \end{enumerate}
 \end{example}
 
@@ -855,8 +856,117 @@ A set $y\subseteq M$ is a \textit{basis} for $M$ if $y$ generates $M$ as an $R$-
 \textit{Week 5, lecture 2 starts here}
 \end{flushright}
 
+\begin{defn}
+A $R$-module is \textit{free} if it has a basis.
+\end{defn}
+\begin{example}
+$R^n$ and $M_2$ are free. $\langle x,y\rangle \subseteq \mathbb C[x,y]$ is not a free $\mathbb C[x,y]$-module, but it's a free $\mathbb C$-module since $\mathbb C$ is a field so it's a vector space, which always has a basis.
+
+$\mathbb Q$ is not a free $\mathbb Z$-module. First a basis would have to be infinite, but $bc\left(\frac{a}{b}\right)-ad\left(\frac{c}{d}\right)=0$, a nontrivial linear dependence relation.
+\end{example}
+
+\subsection{Cayley–Hamilton theorem}
+\begin{remark}
+Matrices make sense over an arbitrary ring and give a $R$-module homomorphism $\varphi:R^n\rightarrow R^m$. Determinants still make sense (as a indicator of whether $\varphi$ is invertible).
+\end{remark}
+
+\begin{defn}
+Let $M$ be an $R$-module. The set of all $R$-module homomorphisms $\varphi:M\rightarrow M$ forms a noncommutative ring with identity and $(\varphi+\varphi)(m)=\varphi(m)+\varphi(m)$ and $(\varphi\psi)(m)=\varphi(\psi(m))$, denoted $\End(M)$.
+\end{defn}
+\begin{example}
+If $R$ is a field and $M=R^n$ then $\End(M)=n\times n$ matrices.
+\end{example}
+
 \begin{flushright}
 \textit{Week 5, lecture 3 starts here}
+\end{flushright}
+
+\begin{notation}
+$\{\varphi_s:s\in R\}$ where $\varphi_s(m):=sm$.
+\end{notation}
+
+\begin{defn}
+Given an $n\times n$ matrix $A$, the subring $R[A]$ of $\End(R^n)$ is the smallest subring of $\End(R^n)$ containing $A$  and all $\{\varphi_s:s\in R\}$. Explicitly,
+\[
+R[A]=\left\{\sum_{i=0} a_i A^i:a_i\in R\right\}
+\] 
+and set $A^0=I$.
+\end{defn}
+\begin{remark}
+Note that $R[A]$ is commutative, and (suggestive by notation) we have a ring homomorphism
+\[
+\begin{aligned}
+\psi:R[x]&\rightarrow R[A] \\
+x&\mapsto A.
+\end{aligned}
+\]
+This is of course not an isomorphism by Cayley–Hamilton theorem.
+
+Also, $R^n$ is an $R[A]$ module with action given by
+\[
+\left(\sum_{i=0} a_i A^i\right) \underline v = \sum_{i=0} a_i \left(A^i \underline v\right)
+\]
+where $\underline v = (r_1,\ldots,r_n)\in R^n$.
+\end{remark}
+
+\begin{defn}
+The \textit{characteristic polynomial} of $A\in\End(R^n)$ is $\det (xI-A)\in R[x]$.
+\end{defn}
+
+\begin{example}
+\begin{enumerate}
+\item $A=\begin{pmatrix}x & x^2 \\ x^3 & x^4\end{pmatrix}$ and $R=\mathbb C[x]$. Then
+\[
+\begin{aligned}
+\det \begin{pmatrix}t-x & x^2 \\ x^3 & t-x^4\end{pmatrix}&=(t-x)(t-x^4)-x^5\\
+&=t^2-(x+x^4)t+x^5-x^5\\
+&=t^2-(x+x^4)t.
+\end{aligned}
+\]
+
+\item $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and $R=\mathbb Z/6\mathbb Z$. Then
+\[
+\det \begin{pmatrix}x-1&2\\3&x-4\end{pmatrix}=(x-1)(x-4)-6=x^2-5x-2=x^2+x+4.
+\]
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+Recall the adjoint of an $n\times n$ matrix $B$ is the matrix $C$ with 
+\[
+C_{ij}=(-1)^{i+j} \det \left(B\backslash i\text{th column and }j\text{th row} \right),
+\]
+which makes sense over any ring. We claim $BC=CB=\det B I_n$ (which implies if $\det B$ is a unit then $B$ is invertible). Indeed,
+\[
+\begin{aligned}
+(BC)_{ij} &= \sum_{k=1}^n B_{ik} C_{kj}\\
+&=\sum_{k=1}^n (-1)^{k+j} B_{ik} \det \left(B\backslash k\text{th column and }j\text{th row} \right)\\
+&=\det \left(B\text{ with }j\text{th row replaced by }i\text{th row}\right)\\
+&=\left\{ \begin{aligned}
+  0 &\text{ if } i\neq j\\ \det B &\text{ if } i= j
+\end{aligned} \right. \\
+&=\left(\det B I_n\right)_{ij}.
+\end{aligned}
+\]
+\end{remark}
+
+\begin{thm}[Cayley–Hamilton]
+Let $R$ be a ring and let $A$ be an $n\times n$ matrix with entries in $R$. Set $p_A(x)=\det (xI-A)\in R[x]$, then $p_A(A)=0$, i.e. $p_A\in\ker\psi$ where $\psi$ is as in remark after Definition 4.2.3.
+\end{thm}
+
+\begin{defn}
+An $R$-module $M$ is \textit{finitely generated} if it has a finite generating set.
+\end{defn}
+
+\begin{thm}
+Let $M$ be a finitely generated $R$-module with $n$ generators and $\varphi:M\rightarrow M$ an $R$-module homomorphism. Suppose $I$ is an ideal of $R$ with $\varphi(M)\subseteq IM:=\langle rm:r\in I,m\in M\rangle$. Then $\varphi$ satisfies a relation of the form
+\[
+\varphi^n + a_1 \varphi^{n-1} + a_{n-1}\varphi + a_n=0 \in\End(M) \text{ where } a_i\in I.
+\]
+\end{thm}
+
+\begin{flushright}
+\textit{Week 6, lecture 1 starts here}
 \end{flushright}
 
 \end{document}

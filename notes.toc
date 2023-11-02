@@ -7,3 +7,4 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Effect of localisation on ideals}{11}{}%
 \contentsline {section}{\numberline {4}Module}{12}{}%
 \contentsline {subsection}{\numberline {4.1}Free module}{14}{}%
+\contentsline {subsection}{\numberline {4.2}Cayley–Hamilton theorem}{15}{}%
