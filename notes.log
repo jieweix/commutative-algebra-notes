@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  2 NOV 2023 13:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  6 NOV 2023 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -411,7 +411,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
 [1
 
 ] [1] [2]
-Overfull \hbox (5.21837pt too wide) in paragraph at lines 195--196
+Overfull \hbox (5.21837pt too wide) in paragraph at lines 197--198
 []\TU/lmr/bx/n/10 Definition 1.0.9. []\TU/lmr/m/n/10 A set $\OMS/cmsy/m/n/10 f\
 OML/cmm/m/it/10 g[]; [] ; g[]\OMS/cmsy/m/n/10 g ^^R \OML/cmm/m/it/10 I$ \TU/lmr
 /m/n/10 is a \TU/lmr/m/it/10 Gröbner basis \TU/lmr/m/n/10 for $\OML/cmm/m/it/10
@@ -422,7 +422,7 @@ OML/cmm/m/it/10 g[]; [] ; g[]\OMS/cmsy/m/n/10 g ^^R \OML/cmm/m/it/10 I$ \TU/lmr
  []
 
 [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (2.40881pt too wide) in paragraph at lines 813--814
+Overfull \hbox (2.40881pt too wide) in paragraph at lines 820--821
 \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) : \OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 2 \
 OML/cmm/m/it/10 R\OMS/cmsy/m/n/10 g$ \TU/lmr/m/n/10 (functions $\OML/cmm/m/it/1
 0 A \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 R$\TU/lmr/m/n/10 ) and $\OML/cmm/m/it/1
@@ -432,14 +432,14 @@ OT1/cmr/m/n/10 ) : \OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R;
 []r[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 =
  []
 
-[14] [15] [16] (./notes.aux) ) 
+[14] [15] [16] [17] [18] (./notes.aux) ) 
 Here is how much of TeX's memory you used:
- 6206 strings out of 476760
- 90211 string characters out of 5805258
+ 6213 strings out of 476760
+ 90361 string characters out of 5805258
  1865482 words of memory out of 5000000
- 26263 multiletter control sequences out of 15000+600000
+ 26270 multiletter control sequences out of 15000+600000
  521672 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,17n,63p,661b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.pdf (17 pages).
+Output written on notes.pdf (19 pages).

@@ -186,7 +186,9 @@ Let $I\subseteq S$ be an ideal. The \textit{initial ideal} of $I$ is $\In_\prec 
 \end{defn}
 \begin{remark}
 If $I=\langle f_1,\ldots,f_s\rangle$ then $\langle \In_\prec (f_1),\ldots,\In_\prec (f_s)\rangle \subseteq \In_\prec(I)$, but not necessarily equal.
+
 \begin{example}
+\label{example:GBcounterexample}
 $I=\langle x+y+z, x+2y+3z\rangle$. Then $\In_\prec (f_1)=\In_\prec (f_2)=x$, so $\langle \In_\prec (f_1) \In_\prec (f_2) \rangle=\langle x\rangle$, but $y+2z\in I,\ \In_\prec(y+2z)=y\not\in \langle x\rangle$.
 \end{example}
 \end{remark}
@@ -194,7 +196,7 @@ $I=\langle x+y+z, x+2y+3z\rangle$. Then $\In_\prec (f_1)=\In_\prec (f_2)=x$, so 
 \begin{defn}
 A set $\{g_1,\ldots,g_s\}\subseteq I$ is a \textit{Gröbner basis} for $I$ if $\In_\prec (I)=\langle \In_\prec (g_1),\ldots,\In_\prec (g_s)\rangle$.
 \end{defn}
-With this language, we can express Example 1.0.8 by saying `$\{x+y+z,x+2y+3z\}$ is not a Gröbner basis of the ideal'. We will see that every ideal in $S$ has a Gröbner basis, and long division using a Gröbner basis solves the ideal membership problem ($f\in I$ iff the remainder on dividing by the Gröbner basis is 0).
+With this language, we can express Example \ref{example:GBcounterexample} by saying `$\{x+y+z,x+2y+3z\}$ is not a Gröbner basis of the ideal'. We will see that every ideal in $S$ has a Gröbner basis, and long division using a Gröbner basis solves the ideal membership problem ($f\in I$ iff the remainder on dividing by the Gröbner basis is 0).
 
 \begin{flushright}
 \textit{Week 2, lecture 1 starts here}
@@ -260,6 +262,7 @@ x^2=(x-y-z)(x+y+z)+(y+3z)(y-z)+4z^2.
 The coming punchline is that if $f_i$'s are a Gröbner basis then remainder $r$ is unique.
 
 \begin{lemma}
+\label{lemma:monomialIdealDivisible}
 Let $I=\langle x^u:u\in A\rangle$ for some $A\subseteq \mathbb N^n$, then
 \begin{enumerate}
 \item $x^v\in I$ iff $x^u\mid x^v$ for some $u\in A$
@@ -285,7 +288,9 @@ If $\{g_1,\ldots,g_s\}$ is a Gröbner basis for $I$ with respect to $\prec$, the
 \begin{defn}
 A ring $R$ is \textit{Noetherian} if every ideal of $R$ is finitely generated.
 \end{defn}
+
 \begin{example}
+\label{example:noetherian}
 \begin{enumerate}
 \item $\mathbb R$ and $\mathbb C$ are fields, so they only have two ideals $\langle 0\rangle,\langle 1\rangle$, so Noetherian.
 \item $\mathbb Z$ and $\mathbb C[x]$ are principal ideal domains, this implies they are Noetherian.
@@ -314,7 +319,7 @@ This gives us a strictly ascending chain $\langle f_1\rangle \subsetneqq \langle
 \end{proof}
 \begin{example}
 \begin{enumerate}
-\item We now know the 4th of Example 2.0.2 is not Noetherian, since
+\item We now know the 4th of Example \ref{example:noetherian} is not Noetherian, since
 \[
 \langle \sin x\rangle \subsetneqq \left\langle \sin \frac{x}{2}\right\rangle \subsetneqq \left\langle \sin \frac{x}{4}\right\rangle \subsetneqq \cdots \subsetneqq \left\langle \sin \frac{x}{2^n}\right\rangle \subsetneqq \cdots
 \]
@@ -409,7 +414,7 @@ In $\mathbb Z$, $\langle p\rangle$ where $p$ prime is a prime ideal by Euclid's 
 
 \subsection{Every ideal $I$ in $\mathbb C[x_1,\ldots,x_n]$ has a finite Gröbner basis}
 
-\begin{proof}[Proof of Lemma 1.1.3]
+\begin{proof}[Proof of Lemma \ref{lemma:monomialIdealDivisible}]
 Note that 1 is a special case of 2, so it suffices to prove the latter.
 
 If $f\in I$ write $f=\sum c_v x^v = \sum_{u\in A} h_u x^u$ with only finitely many $h_u\neq 0$. We expand the RHS as a sum of monomials, each monomial is divisible by some $x^u$ with $u\in A$. Hence the same is true for $x^v$ with $c_v\neq 0$ since these are terms remaining after cancellation.
@@ -436,7 +441,7 @@ Let $m=\max \{m_i\}$. For $0\leq l\leq m-1$, let $J_l=\langle x^u:x^u y^l\in I\r
 \end{enumerate}
 So every monomial in $I$ is a multiple of one of the claimed generators.
 
-If any of these generators is not in our original set $A$, we can replace it by a monomial with exponent in $A$, and by Lemma 1.1.3 if they generate all monomials then they generate the whole $I$.
+If any of these generators is not in our original set $A$, we can replace it by a monomial with exponent in $A$, and by Lemma \ref{lemma:monomialIdealDivisible} if they generate all monomials then they generate the whole $I$.
 \end{proof}
 
 \begin{flushright}
@@ -547,6 +552,7 @@ If $I$ is maximal then $R/I$ is a field, and in particular a domain.
 A ring $R$ is \textit{local} if it has a unique maximal ideal $M$.
 \end{defn}
 \begin{example}
+\label{example:nonexampleLocal}
 Every field is local. $\mathbb Z$ is not local since $\langle2\rangle,\langle 3\rangle$ are both maximal.
 
 Consider
@@ -561,7 +567,7 @@ Now consider
 \[
 \mathbb C[x]_{\langle x\rangle}:= \left\{ \frac{f}{g}:f,g\in\mathbb C[x],\ x\nmid g \right\}.
 \]
-This is analogous to $\mathbb Z_\langle x\rangle$ and its proper ideals are of the form $\langle x^j\rangle$ with $\langle x\rangle$ being maximal.
+This is analogous to $\mathbb Z_{\langle x\rangle}$ and its proper ideals are of the form $\langle x^j\rangle$ with $\langle x\rangle$ being maximal.
 \end{example}
 \begin{defn}
 A set $U\subseteq R$ is \textit{multiplicatively closed} if $1\in U$ and $f,g\in U\Rightarrow fg\in U$.
@@ -575,6 +581,7 @@ $U=\{r\in R:\exists s\in R:rs=1\}=\{\text{units of }R\}$ is multiplicatively clo
 \end{example}
 
 \begin{defn}
+\label{defn:localisation}
 Let $R$ be a ring and let $U\subseteq R$ be multiplicatively closed. Then
 \[
 R\left[U^{-1}\right]:=\left\{ \frac{r}{u}:r\in R,u\in U \right\}
@@ -585,7 +592,7 @@ modulo the equivalence relation $\sim$
 \]
 \end{defn}
 \begin{example}
-$R=\mathbb Z,\ U=\mathbb Z\backslash\{0\}$. Then $\mathbb R\left[U^{-1}\right]=\mathbb Q$. We don't have to worry about the $\tilde u$ condition since $\mathbb Z$ is a domain.
+$R=\mathbb Z,\ U=\mathbb Z\backslash\{0\}$. Then $R\left[U^{-1}\right]=\mathbb Q$. We don't have to worry about the $\tilde u$ condition since $\mathbb Z$ is a domain.
 
 $R=\mathbb Z,\ U=\mathbb Z\backslash \langle 2\rangle$. Then $R[U^{-1}]=\mathbb Z_{\langle 2\rangle}$.
 
@@ -598,7 +605,7 @@ $R=\mathbb C[x],\ U=\mathbb C[x]\backslash \langle x\rangle$. Then $R[U^{-1}]=\m
 
 \begin{lemma}
 \begin{enumerate}
-\item The $\sim$ in Definition 3.0.13 is indeed an equivalence relation.
+\item The $\sim$ in Definition \ref{defn:localisation} is indeed an equivalence relation.
 \item $R[U^{-1}]$ is a ring with addition and multiplication defined
 \[
 \frac{r}{u}+\frac{r'}{u'}:=\frac{ru'+r'u}{uu'},\quad \left(\frac{r}{u}\right)\left(\frac{r'}{u'}\right):=\frac{rr'}{uu'}
@@ -705,7 +712,7 @@ By definition, this implies $\exists \tilde u\in U:\tilde u(ur-\tilde r)=0$, i.e
 \begin{exe}[$\ast$]
 What ideals $I\subseteq \mathbb Z$ satisfy $\star$ when $U=\{\text{odd numbers}\}$ and when $U=\{1,2,4,8,\ldots\}$?
 
-For $U=\{\text{odd numbers}\}$, recall Example 3.1.2. $U=\mathbb Z\backslash \langle2\rangle$, so ideals $I\subseteq \mathbb Z$ satisfy $\star$ corresponds to ideals of $\mathbb Z_{\langle 2\rangle}$, which are generated by powers of 2 (and also the 0 ideal).
+For $U=\{\text{odd numbers}\}$, recall Example \ref{example:nonexampleLocal}. $U=\mathbb Z\backslash \langle2\rangle$, so ideals $I\subseteq \mathbb Z$ satisfy $\star$ corresponds to ideals of $\mathbb Z_{\langle 2\rangle}$, which are generated by powers of 2 (and also the 0 ideal).
 \end{exe}
 
 \begin{coro}
@@ -886,6 +893,7 @@ $\{\varphi_s:s\in R\}$ where $\varphi_s(m):=sm$.
 \end{notation}
 
 \begin{defn}
+\label{defn:RadjoinA}
 Given an $n\times n$ matrix $A$, the subring $R[A]$ of $\End(R^n)$ is the smallest subring of $\End(R^n)$ containing $A$  and all $\{\varphi_s:s\in R\}$. Explicitly,
 \[
 R[A]=\left\{\sum_{i=0} a_i A^i:a_i\in R\right\}
@@ -951,7 +959,7 @@ which makes sense over any ring. We claim $BC=CB=\det B I_n$ (which implies if $
 \end{remark}
 
 \begin{thm}[Cayley–Hamilton]
-Let $R$ be a ring and let $A$ be an $n\times n$ matrix with entries in $R$. Set $p_A(x)=\det (xI-A)\in R[x]$, then $p_A(A)=0$, i.e. $p_A\in\ker\psi$ where $\psi$ is as in remark after Definition 4.2.3.
+Let $R$ be a ring and let $A$ be an $n\times n$ matrix with entries in $R$. Set $p_A(x)=\det (xI-A)\in R[x]$, then $p_A(A)=0$, i.e. $p_A\in\ker\psi$ where $\psi$ is as in remark after Definition \ref{defn:RadjoinA}.
 \end{thm}
 
 \begin{defn}
@@ -959,6 +967,7 @@ An $R$-module $M$ is \textit{finitely generated} if it has a finite generating s
 \end{defn}
 
 \begin{thm}
+\label{thm:generalCH}
 Let $M$ be a finitely generated $R$-module with $n$ generators and $\varphi:M\rightarrow M$ an $R$-module homomorphism. Suppose $I$ is an ideal of $R$ with $\varphi(M)\subseteq IM:=\langle rm:r\in I,m\in M\rangle$. Then $\varphi$ satisfies a relation of the form
 \[
 \varphi^n + a_1 \varphi^{n-1} + a_{n-1}\varphi + a_n=0 \in\End(M) \text{ where } a_i\in I.
@@ -967,6 +976,69 @@ Let $M$ be a finitely generated $R$-module with $n$ generators and $\varphi:M\ri
 
 \begin{flushright}
 \textit{Week 6, lecture 1 starts here}
+\end{flushright}
+
+\begin{proof}[Proof of Cayley–Hamilton theorem]
+Write $e_1,\ldots,e_n$ for the standard basis for $R^n$ and one has $Ae_k=\sum_{j=1}^n a_{jk} e_j$ (the $k$th column of $A$). Write $\delta_{jk}$ for the Kronecker delta. Then
+\[
+\begin{aligned}
+\sum_{j=1}^n \left(A\delta_{jk}-a_{jk}I\right) e_j=\sum_{j=1}^n A\delta_{jk}e_j - \sum_{j=1}^n a_{jk}Ie_j = Ae_k-Ae_k=0.
+\end{aligned}
+\]
+Let $B=(B_{jk})$ be the $n\times n$ matrix with entries in $R[A]$ with $B_{jk}=A\delta_{jk}-a_{jk}I$ and $C$ the adjoint of $B$. Then
+\[
+\begin{aligned}
+0&=\sum_{k=1}^n C_{kj} \left(\sum_{i=1}^n A\delta_{ik}-a_{ik} I\right)e_i = \sum_{i=1}^n \left( \sum_{k=1}^n C_{kj} (A\delta_{ik}-a_{ik}I)e_i \right) \\
+&=\sum_{i=1}^n \sum_{k=1}^n B_{ik}C_{kj} e_i=\sum_{i=1}^n (BC)_{ij} e_i=(\det B )e_j=\begin{pmatrix}
+0 \\ \vdots \\ \det B \\ \vdots \\ 0
+\end{pmatrix} \leftarrow \text{the }j\text{th position} ,
+\end{aligned}
+\]
+so $\det B=0$.
+
+Now $p_A(x)\in R[x]$. Then
+\[
+\psi(p_A(x))=p_A(A)=\det \left( \begin{pmatrix}
+  A & & & 0 \\ & A & & \\ & & \ddots & \\ 0 & & & A
+\end{pmatrix}-A \right)=\det B=0.
+\]
+\end{proof}
+
+\begin{exe}
+Let
+\[
+D=\begin{pmatrix}
+\begin{pmatrix}1&0\\0&1\end{pmatrix} & \begin{pmatrix}1&2\\3&4\end{pmatrix} \\ \begin{pmatrix}3&0\\0&4\end{pmatrix} & \begin{pmatrix}5&6\\7&8\end{pmatrix}
+\end{pmatrix}.
+\]
+Then
+\[
+\begin{aligned}
+\det D&=\begin{pmatrix}1&0\\0&1\end{pmatrix}\begin{pmatrix}5&6\\7&8\end{pmatrix}-\begin{pmatrix}1&2\\3&4\end{pmatrix}\begin{pmatrix}3&0\\0&4\end{pmatrix}\\
+&=\begin{pmatrix}5&6\\7&8\end{pmatrix}-\begin{pmatrix}3&8\\9&16\end{pmatrix}\\
+&=\begin{pmatrix}2&-2\\-2&-28\end{pmatrix}.
+\end{aligned}
+\]
+\end{exe}
+
+\begin{proof}[Proof of Theorem \ref{thm:generalCH}]
+Let $\{m_1,\ldots,m_n\}$ be a generating set for $M$. Since $\varphi(M)\in IM$, one can write
+\[
+\varphi(m_i)=\sum_{i=1}^n a_{ji} m_j\text{ with }a_{ji}\in I.
+\]
+So $\sum_{j=1}^n(\delta_{ji}\varphi-a_{ji})m_j=0$ where $\delta_{ji}\varphi-a_{ji}$ can be analogously be viewed as an element of $R[\varphi]$, which is a commutative ring. Write $B$ for the $n\times n$ matrices with entries in $R[\varphi]$ and $B_{ij}=\delta_{ji}\varphi-a_{ij}$. Let $C$ be the adjoint of $B$. Then
+\[
+0=\sum_{i=1}^n C_{ki} \left(\sum_{j=1}^n B_{ij}m_j\right)=\sum_{j=1}^n \left(\sum_{i=1}^n C_{ki}B_{ij}\right)m_j=\sum_{j=1}^n (CB)_{kj} m_j=(\det B)m_k,
+\]
+so $(\det B)m=0 \ \forall m\in M$, hence $\det B=0\in \End(M)$. Expanding $\det B$ as a polynomial in $\varphi$ gives us the desired.
+\end{proof}
+
+\begin{flushright}
+\textit{Week 6, lecture 2 starts here}
+\end{flushright}
+
+\begin{flushright}
+\textit{Week 6, lecture 3 starts here}
 \end{flushright}
 
 \end{document}
