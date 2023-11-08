@@ -1,10 +1,10 @@
-\contentsline {section}{\numberline {1}Gröbner basis}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Division algorithm}{3}{}%
-\contentsline {section}{\numberline {2}Noetherian ring}{5}{}%
-\contentsline {subsection}{\numberline {2.1}Every ideal $I$ in $\mathbb C[x_1,\ldots ,x_n]$ has a finite Gröbner basis}{7}{}%
-\contentsline {section}{\numberline {3}General commutative ring}{8}{}%
-\contentsline {subsection}{\numberline {3.1}Localisation}{9}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Effect of localisation on ideals}{11}{}%
-\contentsline {section}{\numberline {4}Module}{12}{}%
-\contentsline {subsection}{\numberline {4.1}Free module}{14}{}%
-\contentsline {subsection}{\numberline {4.2}Cayley–Hamilton theorem}{15}{}%
+\contentsline {section}{\numberline {1}Gröbner basis}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Division algorithm}{3}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Noetherian ring}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Every ideal $I$ in $\mathbb C[x_1,\ldots ,x_n]$ has a finite Gröbner basis}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {3}General commutative ring}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Localisation}{9}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Effect of localisation on ideals}{11}{subsubsection.3.1.1}%
+\contentsline {section}{\numberline {4}Module}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Free module}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Cayley–Hamilton theorem}{15}{subsection.4.2}%
