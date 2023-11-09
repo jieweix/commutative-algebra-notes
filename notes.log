@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  8 NOV 2023 20:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  9 NOV 2023 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,31 +455,31 @@ File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
 ) (./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
-5.
+6.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -532,25 +532,25 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 55.
+Package hyperref Info: Link coloring OFF on input line 56.
 (./notes.out) (./notes.out)
 \@outlinefile=\write4
 \openout4 = `notes.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
-8.
+9.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./notes.toc)
 \tf@toc=\write5
@@ -559,7 +559,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
 [1
 
 ] [1] [2]
-Overfull \hbox (5.21837pt too wide) in paragraph at lines 198--199
+Overfull \hbox (5.21837pt too wide) in paragraph at lines 199--200
 [][]\TU/lmr/bx/n/10 Definition 1.0.9. []\TU/lmr/m/n/10 A set $\OMS/cmsy/m/n/10 
 f\OML/cmm/m/it/10 g[]; [] ; g[]\OMS/cmsy/m/n/10 g ^^R \OML/cmm/m/it/10 I$ \TU/l
 mr/m/n/10 is a \TU/lmr/m/it/10 Gröbner basis \TU/lmr/m/n/10 for $\OML/cmm/m/it/
@@ -572,30 +572,30 @@ mr/m/n/10 is a \TU/lmr/m/it/10 Gröbner basis \TU/lmr/m/n/10 for $\OML/cmm/m/it/
 [3] [4] [5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `math shift' on input line 417.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `math shift' on input line 417.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `math shift' on input line 417.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 416.
+(hyperref)                removing `subscript' on input line 417.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 416.
+(hyperref)                removing `subscript' on input line 417.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `math shift' on input line 417.
 
 [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (2.40881pt too wide) in paragraph at lines 821--822
+Overfull \hbox (2.40881pt too wide) in paragraph at lines 822--823
 \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) : \OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 2 \
 OML/cmm/m/it/10 R\OMS/cmsy/m/n/10 g$ \TU/lmr/m/n/10 (functions $\OML/cmm/m/it/1
 0 A \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 R$\TU/lmr/m/n/10 ) and $\OML/cmm/m/it/1
@@ -605,17 +605,24 @@ OT1/cmr/m/n/10 ) : \OML/cmm/m/it/10 r[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R;
 []r[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 =
  []
 
-[14] [15] [16] [17] [18] (./notes.aux)
+[14] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 105
+5.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [18] [19]
+(./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 99E0A3418A6AB070CC14788A2A0969B0;1637.
+(rerunfilecheck)             Checksum: F7B1A27CCA89748584F8362A8DB26D0A;2143.
  ) 
 Here is how much of TeX's memory you used:
- 13384 strings out of 476760
- 203022 string characters out of 5805258
+ 13402 strings out of 476760
+ 203337 string characters out of 5805258
  1866482 words of memory out of 5000000
- 33333 multiletter control sequences out of 15000+600000
- 522032 words of font info for 86 fonts, out of 8000000 for 9000
+ 33345 multiletter control sequences out of 15000+600000
+ 522740 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  72i,17n,76p,661b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.pdf (19 pages).
+Output written on notes.pdf (20 pages).

@@ -8,3 +8,5 @@
 \contentsline {section}{\numberline {4}Module}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Free module}{14}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Cayley–Hamilton theorem}{15}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Corollaries of C–H theorem: Nakayama's lemma(s)}{18}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Localisation of modules}{19}{subsection.4.3}%
