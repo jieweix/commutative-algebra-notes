@@ -24,6 +24,7 @@
 \setlength\parskip{0.3em}
 \setlength{\parindent}{0 pt}
 
+\newcommand{\m}{\mathfrak m}
 \newcommand{\ann}{\text{ann}}
 \newcommand{\In}{\text{in}}
 \newcommand{\End}{\text{End}}
@@ -341,7 +342,7 @@ $\forall I\lhd R,\ R/I$ is a ring, and there is a natural surjective homomorphis
 \begin{thm}[4th isomorphism theorem]
 For the same $\varphi$ as above, there is a 1-1 correspondence
 \[
-\varphi^{-1}:\{J\lhd R/I\} \rightarrow \{\tilde J \lhd R: J\supseteq I\lhd R\}.
+\varphi^{-1}:\{J\lhd R/I\} \rightarrow \{\widetilde J \lhd R: J\supseteq I\lhd R\}.
 \]
 \end{thm}
 \begin{prop}
@@ -377,9 +378,9 @@ r_{m+1}=s_1 r_1+\cdots+s_m r_m \quad \text{for some } s_1,\ldots, s_m\in R,
 \]
 Now consider
 \[
-\tilde f_{m+1}(x):=f_{m+1}(x)-s_1 x^{n_{m+1}-n_1} f_1(x) - s_2 x^{n_{m+1}-n_2} f_2(x) - \cdots - s_m x^{n_{m+1}-n_m} f_m(x),
+\widetilde f_{m+1}(x):=f_{m+1}(x)-s_1 x^{n_{m+1}-n_1} f_1(x) - s_2 x^{n_{m+1}-n_2} f_2(x) - \cdots - s_m x^{n_{m+1}-n_m} f_m(x),
 \]
-whose leading terms cancel and $\deg \tilde f_{m+1}<\deg f_{m+1}$. But $\tilde f_{m+1}$ still satisfies that it's not in $\langle f_1,\ldots,f_m\rangle$, contradicting the minimality of $\deg f_{m+1}$.
+whose leading terms cancel and $\deg \widetilde f_{m+1}<\deg f_{m+1}$. But $\widetilde f_{m+1}$ still satisfies that it's not in $\langle f_1,\ldots,f_m\rangle$, contradicting the minimality of $\deg f_{m+1}$.
 \end{proof}
 \begin{coro}
 If $R$ is Noetherian then $R[x_1,\ldots,x_n]$ is Noetherian.
@@ -590,11 +591,11 @@ R\left[U^{-1}\right]:=\left\{ \frac{r}{u}:r\in R,u\in U \right\}
 \]
 modulo the equivalence relation $\sim$
 \[
-\frac{r}{u}\sim\frac{r'}{u'} \quad\text{if}\quad \exists \tilde u \in U : \tilde u(ru'-r'u)=0.
+\frac{r}{u}\sim\frac{r'}{u'} \quad\text{if}\quad \exists \widetilde u \in U : \widetilde u(ru'-r'u)=0.
 \]
 \end{defn}
 \begin{example}
-$R=\mathbb Z,\ U=\mathbb Z\backslash\{0\}$. Then $R\left[U^{-1}\right]=\mathbb Q$. We don't have to worry about the $\tilde u$ condition since $\mathbb Z$ is a domain.
+$R=\mathbb Z,\ U=\mathbb Z\backslash\{0\}$. Then $R\left[U^{-1}\right]=\mathbb Q$. We don't have to worry about the $\widetilde u$ condition since $\mathbb Z$ is a domain.
 
 $R=\mathbb Z,\ U=\mathbb Z\backslash \langle 2\rangle$. Then $R[U^{-1}]=\mathbb Z_{\langle 2\rangle}$.
 
@@ -617,21 +618,21 @@ $R=\mathbb C[x],\ U=\mathbb C[x]\backslash \langle x\rangle$. Then $R[U^{-1}]=\m
 \end{lemma}
 \begin{proof}
 \begin{enumerate}
-\item It's reflexive since $1(ru-ru)=0$. It's symmetric since $\tilde u(ru'-r'u)=0\Rightarrow -1\tilde u(r'u-ru')=0$ and $-1\tilde u\in U$ by multiplicative closedness.
+\item It's reflexive since $1(ru-ru)=0$. It's symmetric since $\widetilde u(ru'-r'u)=0\Rightarrow -1\widetilde u(r'u-ru')=0$ and $-1\widetilde u\in U$ by multiplicative closedness.
 
 Now suppose
 \[
 \frac{r}{u}\sim\frac{r'}{u'},\quad \frac{r'}{u'}\sim\frac{r''}{u''},
 \]
-then $\exists \tilde u\in U:\tilde u(ru'-r'u)=0$ and $\exists \tilde u'\in U:\tilde u'(r'u''-r''u')=0$. So
+then $\exists \widetilde u\in U:\widetilde u(ru'-r'u)=0$ and $\exists \widetilde u'\in U:\widetilde u'(r'u''-r''u')=0$. So
 \[
-\tilde u' u'' (\tilde u(ru'-r'u))+\tilde u u (\tilde u'(r'u''-r''u'))=0.
+\widetilde u' u'' (\widetilde u(ru'-r'u))+\widetilde u u (\widetilde u'(r'u''-r''u'))=0.
 \]
 which is equal to
 \[
-\tilde u \tilde u' (ru'u''-r'uu''+r'uu''-r''uu')=\tilde u \tilde u' u' (ru''-r''u)
+\widetilde u \widetilde u' (ru'u''-r'uu''+r'uu''-r''uu')=\widetilde u \widetilde u' u' (ru''-r''u)
 \]
-where $\tilde u \tilde u' u'\in U$. Therefore it's transitive.
+where $\widetilde u \widetilde u' u'\in U$. Therefore it's transitive.
 \item (Exercise) One needs to check:
 \begin{itemize}
 \item The two operations are well-defined, i.e. they don't depend on choice of representatives
@@ -705,10 +706,10 @@ $\frac{r}{1}\in\varphi(I)R[U^{-1}]$ means
 \[
 \begin{aligned}
 \frac{r}{1}&=\sum \frac{h_i}{u_i} \frac{r_i}{1} \text{ where } r_i\in I,\ h_i\in R,\ u_i\in U \\
-&=\frac{\tilde r}{u} \text{ for some } \tilde r\in I,\ u\in U.
+&=\frac{\widetilde r}{u} \text{ for some } \widetilde r\in I,\ u\in U.
 \end{aligned}
 \]
-By definition, this implies $\exists \tilde u\in U:\tilde u(ur-\tilde r)=0$, i.e. $(\tilde uu)r=\tilde u\tilde r \in I$ since $\tilde r\in I$. By assumption, $r\in I$. This shows $\varphi^{-1}(J)\subseteq I$, and since $\frac{r}{1}\in J \ \forall r\in I,\ I\subseteq \varphi^{-1}(J)$.
+By definition, this implies $\exists \widetilde u\in U:\widetilde u(ur-\widetilde r)=0$, i.e. $(\widetilde uu)r=\widetilde u\widetilde r \in I$ since $\widetilde r\in I$. By assumption, $r\in I$. This shows $\varphi^{-1}(J)\subseteq I$, and since $\frac{r}{1}\in J \ \forall r\in I,\ I\subseteq \varphi^{-1}(J)$.
 \end{proof}
 
 \begin{exe}[$\ast$]
@@ -1052,10 +1053,10 @@ Set $r:=1+\sum_{i=1}^n a_i$. Then $r-1\in I$ and $rm=0 \ \forall m\in M$.
 \end{proof}
 
 \begin{coro}
-Let $R$ be a local ring with maximal ideal $\mathfrak m$ and $M$ a finitely generated $R$-module. If $\mathfrak m M=M$, then $M=0$.
+Let $R$ be a local ring with maximal ideal $\m$ and $M$ a finitely generated $R$-module. If $\m M=M$, then $M=0$.
 \end{coro}
 \begin{proof}
-By corollary above, $\exists r\in R:r-1\in\mathfrak m$ and $rm=0 \ \forall m\in M$. But then $r\notin \mathfrak m$ since otherwise $r-(r-1)=1\in\mathfrak m$ hence not maximal. So $r$ is a unit. But then
+By corollary above, $\exists r\in R:r-1\in\m$ and $rm=0 \ \forall m\in M$. But then $r\notin \m$ since otherwise $r-(r-1)=1\in\m$ hence not maximal. So $r$ is a unit. But then
 \[
 m=1m=\left(r^{-1}r\right)m =r^{-1} (rm)=r^{-1}0=0 \quad \forall m\in M
 \]
@@ -1063,17 +1064,17 @@ and thus $M=0$.
 \end{proof}
 
 \begin{coro}
-Let $R$ be a local ring with maximal ideal $\mathfrak m$. If $M$ is a finitely generated $R$-module and $m_1,\ldots,m_n\in M$ are elements whose images span the (\textit{residue field}) $k=R/\mathfrak m$-vector space $\overline M=M/\mathfrak m M$, then $m_i$ generate $M$.
+Let $R$ be a local ring with maximal ideal $\m$. If $M$ is a finitely generated $R$-module and $m_1,\ldots,m_n\in M$ are elements whose images span the (\textit{residue field}) $k=R/\m$-vector space $\overline M=M/\m M$, then $m_i$ generate $M$.
 \end{coro}
 \begin{remark}[Sanity check before the proof]
-Verify that this is well-defined, i.e. $r+\mathfrak m=r'+\mathfrak m,\ m+\mathfrak m M=m'+\mathfrak m M \Rightarrow rm+\mathfrak m M=r'm'+\mathfrak m M$. Indeed, if $r-r'\in\mathfrak m$ and $m-m'\in\mathfrak m M$, then $rm-r'm'=(r-r')m+(m-m')r'\in \mathfrak m M$.
+Verify that this is well-defined, i.e. $r+\m=r'+\m,\ m+\m M=m'+\m M \Rightarrow rm+\m M=r'm'+\m M$. Indeed, if $r-r'\in\m$ and $m-m'\in\m M$, then $rm-r'm'=(r-r')m+(m-m')r'\in \m M$.
 \end{remark}
 \begin{proof}
-Let $N$ be the submodule of $M$ generated by $m_i$. Since $m_i+\mathfrak m M$ span $M/\mathfrak m M$, each element of $M$ can be written as
+Let $N$ be the submodule of $M$ generated by $m_i$. Since $m_i+\m M$ span $M/\m M$, each element of $M$ can be written as
 \[
-m=\sum_{i=1}^n r_i m_u + rm'\text{ where } r_i\in R,\ r\in \mathfrak m,\ m'\in M.
+m=\sum_{i=1}^n r_i m_u + rm'\text{ where } r_i\in R,\ r\in \m,\ m'\in M.
 \]
-Thus $m=n+rm'$ for $n\in N$, i.e. $M/N=\mathfrak m M/N$. So by corollary above $M/N=0$, so $M=N$ and one has the desired.
+Thus $m=n+rm'$ for $n\in N$, i.e. $M/N=\m M/N$. So by corollary above $M/N=0$, so $M=N$ and one has the desired.
 \end{proof}
 
 \begin{remark}[$\lightning$]
@@ -1094,7 +1095,7 @@ M\left[U^{-1}\right]:=\left\{\frac{m}{u}:m\in M,u\in U\right\}
 \]
 modulo the equivalence relation
 \[
-\frac{m}{u}\sim \frac{m'}{u'} \text{ if } \exists \tilde u\in U:\tilde u (u'm-um')=0.
+\frac{m}{u}\sim \frac{m'}{u'} \text{ if } \exists \widetilde u\in U:\widetilde u (u'm-um')=0.
 \]
 This is an $R\left[U^{-1}\right]$-module.
 \end{defn}
@@ -1103,8 +1104,8 @@ Readers should verify that the $R\left[U^{-1}\right]$-action $\frac{r}{u}\cdot \
 \begin{lemma}
 Let $R$ be a ring and $M$ an $R$-module.
 \begin{enumerate}
-\item If $m\in M,\ m=0 \Leftrightarrow \frac{m}{1}\sim \frac{0}{1}$ in every localisation $M_{\mathfrak m}=M[U^{-1}]$ at a maximal ideal $\mathfrak m$ where $U=R\backslash \mathfrak m$.
-\item $M=0 \Leftrightarrow M_{\mathfrak m}=0$ for every maximal ideal $\mathfrak m$ of $R$. 
+\item If $m\in M,\ m=0 \Leftrightarrow \frac{m}{1}= \frac{0}{1}$ in every localisation $M_{\m}=M[U^{-1}]$ at a maximal ideal $\m$ where $U=R\backslash \m$.
+\item $M=0 \Leftrightarrow M_{\m}=0$ for every maximal ideal $\m$ of $R$. 
 \end{enumerate}
 \end{lemma}
 
@@ -1117,13 +1118,168 @@ $R=\mathbb Z,\ M=\mathbb Z/6\mathbb Z$. Then $\ann(1)=\langle 6\rangle,\ \ann(2)
 
 \begin{proof}
 \begin{enumerate}
-\item $\frac{m}{1}\sim \frac01 \Leftrightarrow \exists u\notin\mathfrak m:um=0 \Rightarrow \ann(m)\not\subseteq \mathfrak m$. If $m\neq 0$ then $\ann (m)\neq R$ since $1m=m\neq 0$. So by definition $\exists$ a maximal ideal $\mathfrak m$ with $\ann (m)\subseteq \mathfrak m$, so $\frac{m}{1}\not\sim \frac01$ in $M_{\mathfrak m}$. The other direction is clear.
-\item $M=0\Leftrightarrow m=0\ \forall m\in M \Leftrightarrow \forall m\in M, \frac{m}{1}\sim \frac01 \in M_{\mathfrak m} \ \forall \mathfrak m \Leftrightarrow M_{\mathfrak m}=0 \ \forall \mathfrak m$.
+\item $\frac{m}{1}= \frac01 \Leftrightarrow \exists u\notin\m:um=0 \Rightarrow \ann(m)\not\subseteq \m$. If $m\neq 0$ then $\ann (m)\neq R$ since $1m=m\neq 0$. So by definition $\exists$ a maximal ideal $\m$ with $\ann (m)\subseteq \m$, so $\frac{m}{1}\neq \frac01$ in $M_{\m}$. The other direction is clear.
+\item $M=0\Leftrightarrow m=0\ \forall m\in M \Leftrightarrow \forall m\in M, \frac{m}{1}= \frac01 \in M_{\m} \ \forall \m \Leftrightarrow M_{\m}=0 \ \forall \m$.
 \end{enumerate}
 \end{proof}
 
 \begin{flushright}
 \textit{Week 7, lecture 1 starts here}
+\end{flushright}
+
+\begin{defn}[/Lemma]
+Let $\varphi:M\rightarrow N$ be an $R$-module homomorphism and $P$ a prime ideal of $R$. Define $\varphi_P:M_P\rightarrow N_P$ (where again $M_P$ denotes $M[U^{-1}]$ where $U=R\backslash P$) by $\displaystyle \frac{m}{u}\mapsto\frac{\varphi(m)}{u}$.
+\end{defn}
+Check this is well defined: if $\frac{m}{u}=\frac{m'}{u'}$ then $\exists \widetilde u\in U:\widetilde u(u'm-um')=0$, so $0_N=\varphi(0_M)=\varphi(\widetilde u(u'm-um'))=\widetilde u (u'\varphi(m)-u\varphi(m'))$, i.e. $\frac{\varphi(m)}{u}=\frac{\varphi(m')}{u}$. Readers should also check it's a homomorphism.
+
+\begin{coro}
+If $\varphi:M\rightarrow N$ is an $R$-module homomorphism, then $\varphi$ is injective (or surjective, or bijective) iff for every maximal $\m$ of $R$, $\varphi_{\m}:M_\m \rightarrow N_\m$ is injective (or surjective, or bijective).
+\end{coro}
+\begin{proof}
+One has
+\[
+\begin{aligned}
+\ker\varphi_\m &= \left\{\frac{m}{u}:\frac{\varphi(m)}{u}=\frac01\right\} = \left\{\frac{m}{u}:\exists \widetilde u\notin \m:\widetilde u(\varphi(m))=0\right\} \\&= \left\{\frac{m}{u}:\exists \widetilde u\notin \m:\varphi(\widetilde um)=0\right\} \subseteq (\ker\varphi)_\m
+\end{aligned}
+\]
+since $\displaystyle \frac{m}{u}=\frac{\widetilde um}{\widetilde uu}$. Now if $\displaystyle \frac{m}{u}\in(\ker\varphi)_\m$ then $\displaystyle \varphi_m\left(\frac{m}{u}\right)=\frac{\varphi(m)}{u}=0$, so $\displaystyle \frac{m}{u}\in\ker\varphi_m$. Hence
+\[
+\begin{aligned}
+\varphi\text{ injective} &\Leftrightarrow \ker\varphi=0 \Leftrightarrow (\ker\varphi)_\m=0 \ \forall \m \Leftrightarrow \ker\varphi_\m=0 \ \forall \m \\&\Leftrightarrow \varphi_\m\text{ injective } \forall \m.
+\end{aligned}
+\]
+
+Now consider cokernel $N/\im\varphi$, which is $0$ iff $\varphi$ is surjective. We claim $(N/\im\varphi)_\m \cong N_\m/\im\varphi_\m$ by the map $\displaystyle \frac{n+\im\varphi}{u}\mapsto\frac{n}{u}+\im\varphi$. Rest of proof is left as an exercise.
+\end{proof}
+
+\section{Integral closure}
+\begin{defn}
+Let $R$ be a ring. A ring $S$ is an $R$\textit{-algebra} if $\exists$ a homomorphism $\varphi:R\rightarrow S$. This implies $S$ is a $R$-module with $R$-action given by $r\cdot s:=\varphi(r)s$.
+\end{defn}
+\begin{example}
+$\mathbb C[x_1,x_2]$ is a $\mathbb C$-algebra, $\mathbb Q\left(\sqrt 3\right)$ is a $\mathbb Q$-algebra, $\mathbb Z/6\mathbb Z$ is a $\mathbb Z$ algebra.
+\end{example}
+
+\begin{defn}
+$S$ is \textit{finite} over $R$ if $S$ is a finitely generated $R$-module.
+\end{defn}
+
+\begin{defn}
+$s\in S$ is \textit{integral} over $R$ if there is a monic polynomial $f(y)=y^n+a_1y^{n-1}+\cdots+a_n\in R[y]$ with $f(s)=0$. If every element of $S$ is integral over $R$, we say $S$ is \textit{integral} over $R$.
+\end{defn}
+\begin{example}[Why `integral'?]
+$\mathbb Q$ is a $\mathbb Z$-algebra, and $q\in\mathbb Q$ is integral iff $q\in\mathbb Z$.
+
+$\mathbb Z\left[\frac{1+\sqrt5}{2}\right]$ is a $\mathbb Z$-algebra, and $\varphi=\frac{1+\sqrt5}{2}$ is integral since $\varphi^2-\varphi-1=0$.
+
+$\mathbb Z\left[\frac13\right]=\mathbb Z_{\langle3\rangle}$ is a $\mathbb Z$-algebra. Let's prove $\frac13$ is not integral. Suppose
+\[
+f\left(\frac13\right)=\left(\frac13\right)^n+\sum_{i=0}^{n-1} a_{n-i}\left(\frac13\right)^i=0.
+\]
+Then
+\[
+1+\sum_{i=0}^{n-1}a_{n-i}3^{n-i}=0,
+\]
+which is impossible since LHS $=1\Mod 3$ and RHS $=0\Mod 3$.
+\end{example}
+
+\begin{notation}
+For a $R$-algebra $S$ with $R\subseteq S$ and $s_1,\ldots,s_m$ elements of $S$, write $R[s_1,\ldots,s_m]$ for the smallest subring of $S$ containing $R$ and $s_1,\ldots,s_m$.
+\end{notation}
+
+\begin{flushright}
+\textit{Week 7, lecture 2 starts here}
+\end{flushright}
+
+\begin{lemma}
+We can explicitly write
+\[
+R[s_1,\ldots,s_m]=\left\{ \sum_{u\in\mathbb N^n}^k a_u s^u:a_u\in R \text{ and only finitely many } a_u\neq 0\right\}.
+\]
+\end{lemma}
+
+\begin{defn}
+$S'\subseteq S$ is an $R$\textit{-subalgebra} if $S'$ is a subring and $\varphi:R\rightarrow S$ has image in $S'$.
+\end{defn}
+
+\begin{prop}
+\label{prop:sintthenRsfinite}
+Let $S$ be an $R$-algebra with $R\subseteq S$ and fix $s\in S$. The following are equivalent:
+\begin{enumerate}
+\item $s$ is integral over $R$.
+\item Subring $R[s]\subseteq S$ is finite over $R$.
+\item There is an $R$-subalgebra $R'\subseteq S:R[s]\subseteq R'$ and $R'$ is finite over $R$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof} \
+
+\begin{enumerate}
+\item[$1\Rightarrow 2$:] If $s$ satisfies a relation $s^n+a_1s^{n-1}+\cdots+a_n=0$ with $a_i\in R$, then $R[s]$ is generated by $1,s,\ldots,s^{n-1}$ as an $R$-module. Indeed, if $f\in R[s]$ is a polynomial in $s$ of degree $\geq n$, then we can use the relation to lower the degree.
+\item[$2\Rightarrow 3$:] Take $R'=R[s]$.
+\item[$3\Rightarrow 1$:] Consider the $R$-module homomorphism $\varphi:R'\rightarrow R'$ given by $r\mapsto sr$. Since $R'$ is a finitely generated $R$-module, $\varphi$ satisfies a relation $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n=0$ where $a_i\in R$ by Theorem \ref{thm:generalCH} and taking $I=R$. Applying this to $1_R$ gives $s^n+a_1s^{n-1}+\cdots+a_n=0$, so $s$ is integral.
+\end{enumerate}
+\end{proof}
+
+\begin{thm}
+Let $S$ be a $R$-algebra with $R\subseteq S$.
+\begin{enumerate}
+\item If $R\subseteq S\subseteq S'$, $S'$ is finite over $S$ and $S$ is finite over $R$, then $S'$ is finite over $R$.
+\item If $s_1,\ldots,s_m\in S$ are integral, then $R[s_1,\ldots,s_m]$ is finite over $R$ and in particular integral over $R$.
+\item If $R\subseteq S\subseteq S'$, $S'$ is integral over $S$ and $S$ is integral over $R$, then $S'$ is integral over $R$.
+\item The subset
+\[
+\widetilde R:=\{s\in S:s\text{ integral over }R\}\subseteq S,
+\]
+is a subring of $S$ with $\widetilde{\widetilde R}=\widetilde R$, i.e. if $s\in S$ is integral over $\widetilde R$, it is integral over $R$.
+\end{enumerate}
+\end{thm}
+
+\begin{flushright}
+\textit{Week 7, lecture 3 starts here}
+\end{flushright}
+
+\begin{proof}
+\begin{enumerate}
+\item If $s_1,\ldots,s_m$ generate $S$ as an $R$-module and $s_1',\ldots,s_n'$ generate $S'$ as an $S$-module, then $\{s_is_j':1\leq i\leq m,\ 1\leq j\leq n\}$ generates $S'$ as an $R$-module. Indeed, if $s\in S'$ then $s=\sum_{i=1}^n a_is_i'$ where $a_i\in S$, and $a_i=\sum_{j=1}^m r_{ij}s_j$ where $r_{ij}\in R$, so
+\[
+s=\sum_{i=1}^n \left(\sum_{j=1}^m r_{ij}s_j\right)s_i'=\sum_{i=1}^n \sum_{j=1}^m r_{ij} (s_i's_j).
+\]
+\item We prove by induction on $m$ and Proposition \ref{prop:sintthenRsfinite} provides the base case. Suppose the claim is true for $m'<m$. One has $R[s_1,\ldots,s_m]=R[s_1,\ldots,s_{m-1}][s_m],\ R[s_1,\ldots,s_{m-1}]$ is finite over $R$ and $s_m$ is integral over $R[s_1,\ldots,s_{m-1}]$, so again by Proposition \ref{prop:sintthenRsfinite}, $R[s_1,\ldots,s_m]$ is finite over $R[s_1,\ldots,s_{m-1}]$. Hence by part 1, $R[s_1,\ldots,s_{m}]$ is finite over $R$. To see it is integral, one uses part 3 of Proposition \ref{prop:sintthenRsfinite}.
+\item Let $s'\in S'$. One has $s'$ satisfies a relation $s'^n+b_1s'^{n-1}+\cdots+b_n=0$ where $b_i\in S$, so each $b_i$ is integral over $R$. By part 2, $R[b_1,\ldots,b_n]$ is finite over $R$, so by Proposition \ref{prop:sintthenRsfinite}, $R[b_1,\ldots,b_n,s']$ is finite over $R[b_1,\ldots,b_n]$ and so $R[b_1,\ldots,b_n,s']$ is finite over $R$. Therefore again by part 3 of Proposition \ref{prop:sintthenRsfinite}, $s'$ is integral over $R$.
+\item To see $\widetilde R$ is a ring, consider $s_1,s_2\in\widetilde R$. Then by part 2, $R[s_1,s_2]$ is integral over $R$, so $-s_1,s_1+s_2,s_1s_2\in R[s_1,s_2]$ are integral over $R$, i.e. in $\widetilde R$. The fact that $\widetilde{\widetilde R}=\widetilde R$ follows from part 3 with $S=\widetilde R,\ S'=\widetilde R[s]$.
+\end{enumerate}
+\end{proof}
+
+\begin{defn}
+$\widetilde R$ is called \textit{integral closure} of $R$ in $S$.
+
+If $\widetilde R=R$ then $R$ is \textit{integrally closed} in $S$.
+
+If $R$ is a domain and is integrally closed in its field of fractions $R_{\langle 0\rangle}$, then $R$ is \textit{integrally closed} (or \textit{normal}).
+\end{defn}
+
+\begin{example}
+For $R=\mathbb Z$ and $S=\mathbb Q\left(\sqrt d\right)$ where $d$ is a squarefree integer, $\widetilde R=\mathbb Z[d]$ if $d\equiv 2,3\Mod 4$ and $\mathbb Z\left[\frac{1+\sqrt d}{2}\right]$ if $d\equiv 1\Mod 4$. When one sees this, one should recall definition of \textit{ring of integers} in algebraic number theory.
+
+The integral closure of $\mathbb C[t^2,t^3]\subseteq \mathbb C[t]$ is all of $\mathbb C[t]$ since $t$ is integral ($x^2-t^2=0$).
+\end{example}
+
+\section{Varieties}
+\begin{defn}
+Let $I\subseteq K[x_1,\ldots,x_n]$ be an ideal where $K$ is a field. The \textit{variety} of $I$ is $V(I):=\{(a_1,\ldots,a_n)\in K^n:f(a_1,\ldots,a_n)=0 \ \forall f\in I\}$.
+\end{defn}
+
+\begin{example}
+$V(\langle x^2+y^2-1 \rangle)\subseteq \mathbb R^2$ is a circle, $V(\langle y^2-x^3+x-1 \rangle)\subseteq \mathbb C^2$ is an elliptic curve,  $V(\langle xy,xz \rangle)\subseteq \mathbb C^2$ is $y$-$z$-plane and $x$-axis. 
+
+By Fermat's last theorem, $V(\langle x^4+y^4-1\rangle)\subseteq \mathbb Q^2$ is $\{(0,\pm1),(\pm1,0)\}$.
+
+$V(\langle xz-y^2,xw-yz,yw-z^2 \rangle)$ is ...
+\end{example}
+
+\begin{flushright}
+\textit{Week 8, lecture 1 starts here}
 \end{flushright}
 
 \end{document}
