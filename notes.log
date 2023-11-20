@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  16 NOV 2023 11:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  20 NOV 2023 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,9 +612,9 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 105
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [18] [19]
-[20] [21] [22] (./notes.aux)
+[20] [21] [22] [23] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: DAA02E113635E76BB7C3743C0AE70146;2359.
+(rerunfilecheck)             Checksum: EDA62E2898F8F8F4703EC04AB3EE331C;2349.
  ) 
 Here is how much of TeX's memory you used:
  13403 strings out of 476760
@@ -625,4 +625,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  72i,17n,76p,661b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.pdf (23 pages).
+Output written on notes.pdf (24 pages).
