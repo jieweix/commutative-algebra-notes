@@ -1222,6 +1222,7 @@ Let $S$ be an $R$-algebra with $R\subseteq S$ and fix $s\in S$. The following ar
 \end{proof}
 
 \begin{thm}
+\label{thm:integral}
 Let $S$ be a $R$-algebra with $R\subseteq S$.
 \begin{enumerate}
 \item If $R\subseteq S\subseteq S'$, $S'$ is finite over $S$ and $S$ is finite over $R$, then $S'$ is finite over $R$.
@@ -1318,10 +1319,11 @@ One has $X\subseteq V(I(X))$ and $I\subseteq I(V(I))$. Both can be proper, e.g.
 \end{remark}
 
 \begin{thm}[Nullstellensatz]
+\label{thm:Nullstellensatz}
 Let $K$ be algebraically closed and $I\subseteq K[x_1,\ldots,x_n]$.
 \begin{enumerate}
-\item $V(I)=\varnothing \Leftrightarrow I=\langle 1\rangle=K[x_1,\ldots,x_n]$.
-\item $I(V(I))=\sqrt I:=\{f\in K[x_1,\ldots,x_n]:f^m\in I\text{ for some }m\geq 1\}$.
+\item $V(I)=\varnothing \Leftrightarrow I=\langle 1\rangle=K[x_1,\ldots,x_n]$.\hfill weak form
+\item $I(V(I))=\sqrt I:=\{f\in K[x_1,\ldots,x_n]:f^m\in I\text{ for some }m\geq 1\}$.\hfill strong form
 \end{enumerate}
 \end{thm}
 
@@ -1342,8 +1344,121 @@ so $f+g\in\sqrt I$. It's also clear that $\sqrt I$ is multiplicatively closed.
 \textit{Week 8, lecture 2 starts here}
 \end{flushright}
 
+\begin{lemma}
+$I(X)$ is an ideal.
+\end{lemma}
+\begin{proof}
+If $f(a),g(a)=0 \ \forall a\in X$, then $(f+g)(a)=f(a)+g(a)=0+0=0 \ \forall a\in X$, and $(hf)(a)=h(a)f(a)=h(a)0=0$.
+\end{proof}
+
+\begin{prop}
+\label{prop:SintRthenRfieldiffSfield}
+If $R\subseteq S$ are domains with $S$ integral over $R$, then $R$ is a field iff $S$ is a field.
+\end{prop}
+\begin{proof}
+\begin{itemize}
+\item[$\Rightarrow:$] Fix $s\in S$ with $s\neq 0$. Then one can write
+\[
+s^n+a_1s^{n-1}+\cdots+a_{n-1}s+a_n=0\quad\text{where }a_i\in R
+\]
+Since $S$ is domain, $a_n\neq 0$, and since $R$ is a field,
+\[
+1=-a_n^{-1}s\left(s^{n-1}+a_1s^{n-2}+\cdots+a_{n-2}s+a_{n-1}\right),
+\]
+i.e. $s$ has an inverse, so $S$ is a field.
+\item[$\Leftarrow:$] Fix $r\in R$ with $r\neq 0$. Then since $S$ is a field, $r^{-1}\in S$, so one can write
+\[
+\left(r^{-1}\right)^n+a_1\left(r^{-1}\right)^{n-1}+\cdots+a_{n-1}r^{-1}+a_n=0\quad\text{where }a_i\in R.
+\]
+Multiplying by $r^{n-1}$ gives
+\[
+r^{-1}+a_1+\cdots+a_{n-1}r^{n-2}+a_nr^{n-1}=0,
+\]
+so $r^{-1}\in R$.
+\end{itemize}
+\end{proof}
+
+\begin{defn}
+An $R$-algebra $S$ is \textit{finitely generated} if $\exists s_1,\ldots,s_n\in S:S$ the smallest $R$-subalgebra containing $s_1,\ldots,s_n$.
+\end{defn}
+\begin{remark}
+Finitely generated as an $R$-algebra is \underline{weaker} than finite over $R$ (i.e. finitely generated as an $R$-module), e.g. $K[x_1,\ldots,x_n]$ as a $K$-algebra/module.
+\end{remark}
+
+\begin{thm}
+Let $K$ be a field and $L$ a finitely generated $K$-algebra which is also a field. Then $L$ is finite over $K$ (in particular integral over $K$).
+\end{thm}
+\begin{proof}
+Write
+\[
+L=K[x_1,\ldots,x_n]/I\cong K[\overline{x_1},\ldots,\overline{x_n}]\quad\text{where }\overline{x_i}=x_i+I\text{ is the image of }x_i\text{ in }L.
+\]
+We will prove (by induction) that each $\overline{x_i}$ is integral over $K$, so that by Theorem \ref{thm:integral}.2 we would have the desired.
+
+When $n=1,\ L=K[\overline{x_1}]$. Since $\overline{x_1}^{-1}\in L$, it's a polynomial $p$ in $\overline{x_1}$, so $\ast(\overline{x_1})=\overline{x_1}p(\overline{x_1})-1=0$. Since $K$ is a field, we can make $\ast$ monic and $\overline{x_1}$ is hence integral over $K$, so $L$ is finite over $K$.
+
+Now suppose the statement is true for $n-1$. Since $L$ is a field, it contains the field $K(\overline{x_1})$, so we can really think of $L$ as $K(\overline{x_1})[\overline{x_2},\ldots,\overline{x_{n-1}}]$. By induction hypothesis, $L$ is finite over $K(\overline{x_1})$, so each $\overline{x_j}$ where $2\leq j\leq n$ is integral over $K(\overline{x_1})$, i.e. one has a monic polynomial $p_j\in K(\overline{x_1})[x]:p_j(\overline{x_j})=0$. Let $f\in K[\overline{x_1}]$ be a common denominator of coefficients of all $p_j$. Then one can see $p_j$ as monic with coefficients in $K[\overline{x_1}][f^{-1}]$, and $L$ is integral over $K[\overline{x_1}][f^{-1}]$. By Proposition \ref{prop:SintRthenRfieldiffSfield}, $K[\overline{x_1}][f^{-1}]\subseteq K(\overline{x_1})$ is a field. By minimality of $K(\overline{x_1}),\ K[\overline{x_1}][f^{-1}]\cong K(\overline{x_1})$.
+
 \begin{flushright}
 \textit{Week 8, lecture 3 starts here}
+\end{flushright}
+
+Consider the ring homomorphism $\varphi:K[t]\rightarrow K[\overline{x_1}]:t\mapsto \overline{x_1}$. This is surjective by construction. If $\varphi$ is injective (hence an isomorphism), then $K(t)\cong K(\overline{x_1})$. Let $p(t)=\varphi^{-1}(f)$ and choose $g\in K[t]$ with $p\nmid g$. Then
+\[
+\frac{1}{q}\notin K[t][p^{-1}]\cong K[\overline{x_1}][f^{-1}]\cong K(\overline{x_1})\cong K(t),
+\]
+a contradiction, so $\varphi$ is not injective, i.e. $\exists p\in K[t]:p(\overline{x_1})=0$. Again, since $K$ is a field, one can make $p$ monic and see that $\overline{x_1}$ is integral over $K$, so $K[\overline{x_1}]$ is finite over $K$. Now by \ref{prop:SintRthenRfieldiffSfield}, $K[\overline{x_1}]$ is a field and so $K[\overline{x_1}]\cong K(\overline{x_1})$, hence $K(\overline{x_1})$ is finite over $K$. We conclude that $L$ is finite over $K$.
+\end{proof}
+
+\begin{coro}
+The maximal ideals of $K[x_1,\ldots,x_n]$ where $K$ is an algebraically closed field are of the form $\langle x_1-a_1,\ldots,x_n-a_n\rangle$ where $a_i\in K$.
+\end{coro}
+\begin{remark}
+\begin{enumerate}
+\item Again we do need the assumption of $K$ being algebraically closed. Consider $\langle x^2+1\rangle\subseteq \mathbb R[x]$, which is maximal since any ideal strictly containing it would be generated by something that strictly divides $x^2+1$, which is however irreducible over $\mathbb R$.
+\item If $K$ is algebraically closed then there are no fields $L\supsetneqq K$ with $L$ finite over $K$, since if there is such $L$ then $l\in L\backslash K$ would satisfy a monic polynomial with coefficients in $K$ and minimal degree, but then by definition $l\in K$.
+\end{enumerate}
+\end{remark}
+\begin{proof}
+Let $\m$ be a maximal ideal. Then $L=K[x_1,\ldots,x_n]/\m$, a finitely generated $K$-algebra, is a field, so by theorem above $L$ is finite over $K$. Since $K$ is algebraically closed, by remark above $L\cong K$, i.e. $\exists\varphi:K[x_1,\ldots,x_n]/\m\rightarrow K$ with $\varphi(a)=a\ \forall a\in K$. Set $a_i=\varphi(x_i)$, then $\varphi(x_i-a_i)=\varphi(x_i)-a_i=0$, i.e. $x_i-a_i\in\ker\varphi=\m$, so $\m\supseteq\langle x_1-a_1,\ldots,x_n-a_n\rangle$. We claim
+\[
+f\in\m\backslash\langle x_1-a_1,\ldots,x_n-a_n\rangle \Rightarrow f(a_1,\ldots,a_n)\in\m,
+\]
+proof of which is left as an exercise. This completes the proof.
+\end{proof}
+
+We are now ready to prove the \textbf{Nullstellensatz}.
+\begin{proof}[Proof of \ref{thm:Nullstellensatz}]
+\begin{enumerate}
+\item Suppose $I\subsetneqq K[x_1,\ldots,x_n]$. Then $I\subseteq \m$ for some maximal ideal $\m=\langle x_1-a_1,\ldots,x_n-a_n\rangle$. One has $I\subseteq J\Rightarrow V(J)\subseteq V(I)$, so since $(a_1,\ldots,a_n)\in V(\m),\ V(I)\neq\varnothing$.
+\item (by Rabinowitch trick) Note that if $f^m\in I$ then $f^m(a)=0 \ \forall a\in V(I)$, so $(f(a))^m=0$ and so $f(a)=0 \ \forall a\in V(I)$, so $f\in I(V(I))$. We have just proved that $\sqrt I\subseteq I(V(I))$.
+
+Now fix $f\in I(V(I))$ and set $J=\langle f:f\in I\rangle+\langle fy-1\rangle\subseteq K[x_1,\ldots,x_n,y]$. One has $V(J)=\varnothing$ since $f$ and $fy-1$ cannot be zero at the same time. By weak Nullstellensatz, $1\in J$, i.e.
+\[
+1=\sum_{i=1}^r h_i(x,y)f_i(x) + h(x,y)(yf-1)\in K[x_1,\ldots,x_n,y]\subseteq K(x_1,\ldots,x_n,y).
+\]
+Now if one just lets $y=\frac{1}{f}$ then
+\[
+1=\sum_{i=1}^r h_i\left(x,\frac1f\right) f_i(x)
+\]
+and for some $m$ one can clear the denominator and have,
+\[
+f^m=\sum_{i=1}^r \underbrace{h_i\left(x,\frac1f\right)f^m}_{\text{polynomial in }x} f_i(x) \in I,
+\]
+i.e. $I(V(I))\subseteq \sqrt I$.
+\end{enumerate}
+\end{proof}
+
+\begin{flushright}
+\textit{Week 9, lecture 1 starts here}
+\end{flushright}
+
+\begin{flushright}
+\textit{Week 9, lecture 2 starts here}
+\end{flushright}
+
+\begin{flushright}
+\textit{Week 9, lecture 3 starts here}
 \end{flushright}
 
 \end{document}
