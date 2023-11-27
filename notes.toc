@@ -12,3 +12,4 @@
 \contentsline {subsection}{\numberline {4.3}Localisation of modules}{19}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Integral closure}{20}{section.5}%
 \contentsline {section}{\numberline {6}Variety}{22}{section.6}%
+\contentsline {section}{\numberline {7}Primary decomposition}{25}{section.7}%
