@@ -24,8 +24,8 @@
 \setlength\parskip{0.3em}
 \setlength{\parindent}{0 pt}
 
-\newcommand{\la}{\langle}
-\newcommand{\ra}{\rangle}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\C}{\mathbb C}
@@ -330,7 +330,7 @@ This gives us a strictly ascending chain $\la f_1\ra \subsetneqq \la f_1,f_2\ra 
 \begin{enumerate}
 \item We now know the 4th of Example \ref{example:noetherian} is not Noetherian, since
 \[
-\la \sin x\ra \subsetneqq \left\la \sin \frac{x}{2}\right\ra \subsetneqq \left\la \sin \frac{x}{4}\right\ra \subsetneqq \cdots \subsetneqq \left\la \sin \frac{x}{2^n}\right\ra \subsetneqq \cdots
+\la \sin x\ra \subsetneqq \la \sin \frac{x}{2}\ra \subsetneqq \la \sin \frac{x}{4}\ra \subsetneqq \cdots \subsetneqq \la \sin \frac{x}{2^n}\ra \subsetneqq \cdots
 \]
 is a strictly ascending chain or ideals.
 \item Also,
@@ -1566,11 +1566,11 @@ J_m=(I:g^m):=\{h\in R:hg^m\in I \ \text{ for }m\geq 1\}.
 \]
 This must stabilise since $R$ is Noetherian, i.e. $\exists N:J_m=J_N \ \forall m\geq N$. We claim that
 \[
-I=\left(I+\left\la g^N\right\ra\right)\cap (I+\la f\ra).
+I=\left(I+\la g^N\ra\right)\cap (I+\la f\ra).
 \]
-The $\subseteq$ inclusion is clear. Now fix $h\in\left(I+\left\la g^N\right\ra\right)\cap (I+\la f\ra)$. Then $gh\in I$ since $h\in I+\la f\ra$ and $fg\in I$. Also one can write $h=i+rg^N$ for some $i\in I,\ r\in R$, so $gh=gi+rg^{N+1} \in I$, hence $rg^{N+1}\in I$, i.e. $r\in (I:g^{N+1})=(I:g^N)$. Thus $rg^N\in I$ and so $h\in I$.
+The $\subseteq$ inclusion is clear. Now fix $h\in\left(I+\la g^N\ra\right)\cap (I+\la f\ra)$. Then $gh\in I$ since $h\in I+\la f\ra$ and $fg\in I$. Also one can write $h=i+rg^N$ for some $i\in I,\ r\in R$, so $gh=gi+rg^{N+1} \in I$, hence $rg^{N+1}\in I$, i.e. $r\in (I:g^{N+1})=(I:g^N)$. Thus $rg^N\in I$ and so $h\in I$.
 
-Since $I$ is irreducible, $I=I+\left\la g^N\right\ra$ or $I+\la f\ra$, which precisely implies that $I$ is primary.
+Since $I$ is irreducible, $I=I+\la g^N\ra$ or $I+\la f\ra$, which precisely implies that $I$ is primary.
 \end{proof}
 
 \begin{flushright}
@@ -1604,5 +1604,152 @@ Let $M$ be an $R$-module. An ideal $P$ is an \textit{associated prime} of $M$ if
 \begin{example}
 $\la 3\ra$ is an associated prime of the $\Z$-module $\Z/27\Z$; in fact it's the only one, i.e. $\ass(M)=\{\la3\ra\}$.
 \end{example}
+
+\begin{flushright}
+\textit{Week 10, lecture 1 starts here}
+\end{flushright}
+
+\begin{lemma}
+\label{nzeromoduleshavenemptyass}
+If $R$ is Noetherian and $M\neq 0$, then $\ass(M)\neq\varnothing$. 
+\end{lemma}
+\begin{proof}
+Let $S=\{\ann(m):m\in M,m\neq 0\}$. Then $S$ is nonempty since $M\neq 0$. Every element of $S$ is proper, since $1\notin\ann(m)$ if $m\neq 0$. $S$ therefore has a maximal element $I=\ann(m')$ since $R$ is Noetherian. We claim $I$ is prime. Indeed, if $fg\in I$ then $fgm'=0$. If $gm'=0$ then $g\in I$. Otherwise, $gm'\neq 0$ and $f\in\ann (gm')\in S$. It's clear that $\ann(m')\subseteq\ann(gm')$, but since $\ann(m')$ is maximal, it must be $\ann(m')=\ann(gm')$ and $f\in\ann(m')$, so $I$ is prime, hence an associated prime.
+\end{proof}
+
+\begin{prop}
+\label{prop:assRQ=P}
+If $Q$ is $P$-primary in a Noetherian ring $R$, then $\ass(R/Q)=\{P\}$.
+\end{prop}
+\begin{proof}
+We have $\sqrt Q=P$. If $r\in R\backslash Q$ and $s\in R$ with $rs\in Q$, then $s^l\in Q$ for some $l>0$, so $s\in P$. Thus for any $0\neq m=r+Q\in R/Q$, one has $\ann(m)\subseteq P$. Since $Q\subseteq\ann(m)$, one has $P=\sqrt Q\subseteq \sqrt{\ann(m)}\subseteq \sqrt P=P$, so $\sqrt{\ann(m)}=P$. This means if $\ann(m)$ is prime then it's $P$, i.e. $\ass(R/Q)\subseteq\{P\}$. The other inclusion is clear, so $\ass(R/Q)=\{P\}$.
+\end{proof}
+
+\begin{example}
+$\displaystyle \ass\left(\frac{\C[x,y]}{\la x^2,y\ra}\right)=\{\la x,y\ra\}$ since $\la x^2,y\ra$ is $\la x,y\ra$-primary.
+\end{example}
+
+\begin{thm}
+Let $R$ be Noetherian and $I=Q_1\cap \cdots \cap Q_s$ be a primary decomposition where $Q_i$ is $P_i$-primary. Then $\ass(R/I)\subseteq\{P_1,\ldots,P_s\}$. If the decomposition is irredundant then one has equality.
+
+This gives us a way to get a minimal primary decomposition from any decomposition.
+\end{thm}
+
+\begin{lemma}
+\label{lemma:injthenasssubset}
+If $\varphi:M\rightarrow N$ is injective then $\ass(M)\subseteq\ass(N)$.
+\end{lemma}
+\begin{proof}
+$\ann(m)=\ann(\varphi(m))$, since if $rm=0_M$ then $0_N=\varphi(rm)=r\varphi(m)$ so $\ann(m)\subseteq \ann(\varphi(m))$ and if $r\varphi(m)=0_N$ then $\varphi(rm)=0_N$, so since $\varphi$ is injective $rm=0_M$, i.e. $r\in\ann(m)$, so $\ann(m)\supseteq \ann(\varphi(m))$.
+\end{proof}
+\begin{example}
+One can indeed has proper inclusion, e.g. $R=\Z,\ N=\Z/6\Z,\ M=\Z/3\Z$ with $\varphi:M\rightarrow N:m\mapsto 2m$. Then $\ass(N)=\{\la 2\ra, \la 3\ra\}$ and $\ass(M)=\{\la 3\ra\}$.
+\end{example}
+
+\begin{flushright}
+\textit{Week 10, lecture 2 starts here}
+\end{flushright}
+
+\begin{defn}
+If $M_1,\ldots,M_s$ are $R$-modules, then $\bigoplus_{i=1}^s R_i$ is an $R$-module with elements $(m_1,\ldots,m_s)$ where $m_i\in M_i$, coordinatewise addition and multiplication defined $r(m_1,\ldots,m_s)=(rm_1,\ldots,rm_s)$.
+\end{defn}
+\begin{example}
+$R^n=\bigoplus_{i=1}^n R$
+
+$R=\Z,\ \Z/2\Z \times \Z/3\Z=\Z/2\Z \oplus \Z/3\Z=\Z/6\Z$.
+\end{example}
+
+\begin{lemma}
+If $M=\bigoplus_{i=1}^s M_i$ then $\ass(M)=\bigcup_{i=1}^s \ass (M_i)$.
+\end{lemma}
+\begin{proof}
+We have injective homomorphisms
+\[
+\begin{aligned}
+\varphi_i:M_i&\rightarrow M\\
+m_i&\mapsto(0,\ldots,&m_i,\ldots,0)\\
+&&i\text{th position}
+\end{aligned}
+\]
+Thus by \ref{lemma:injthenasssubset}, $\ass(M_i)\subseteq\ass(M) \ \forall i$, i.e. $\bigcup_{i=1}^s \ass (M_i)\subseteq \ass(M)$.
+
+For the other inclusion, we prove by induction on $s$. The base case is a tautology, now suppose the statement is true for $s-1$, and let $P=\ann((m_1,\ldots,m_s))\in\ass(M)$. Suppose for contradiction $P\notin\ass(M_i)$ for any $i$. Note that for all $r\in P,\ rm_s=0_{M_s}$. Since $P\neq\ann(m_s)$by assumption, there is an $r'\in\ann(m_s)\backslash P$. By induction, $P\notin\ass\left(\bigoplus_{i=1}^{s-1} M_i\right)$, so $P\neq \ann((m_1,\ldots,m_{s-1}))$. Thus there is an $r''\in R\backslash P$ with $r''(m_1,\ldots,m_{s-1})=0_{\bigoplus_{i=1}^{s-1} M_i}$. Then $r'r''(m_1,\ldots,m_s)=0$, i.e. $r'r''\in P$. But $P$ is prime, a contradiction.
+\end{proof}
+
+\begin{example}
+By lemma above and Proposition \ref{prop:assRQ=P},
+\[
+\begin{aligned}
+\ass(\Z/2\Z\oplus\Z/4\Z\oplus\Z/3\Z)&=\ass(\Z/2\Z)\cup\ass(\Z/4\Z)\cup\ass(\Z/3\Z)\\
+&=\{\la 2\ra\}\cup\{\la 2\ra\}\cup\{\la 3\ra\}\\
+&=\{\la 2\ra,\la 3\ra\}.
+\end{aligned}
+\]
+\end{example}
+
+\begin{thm}
+Let $R$ be Noetherian and $I=Q_1\cap\cdots\cap Q_s$ a primary decomposition with $Q_i \ P$-primary. Then
+\[
+\ass(R/I)\subseteq \{P_1,\ldots,P_s\}
+\]
+and if the decomposition is irredundant then one has equality.
+\end{thm}
+
+\begin{proof}
+Each $R/Q_i$ is an $R$-module, so we can form the direct sum $M=\bigoplus_{i=1}^s R/Q_i$. Consider the $R$-module homomorphism
+\[
+\begin{aligned}
+\varphi:R/I&\rightarrow M\\
+r+I&\mapsto (r+Q_1,\ldots,r+Q_s)
+\end{aligned}
+\]
+This is well defined, since if $r+I=r'+I$ then $r-r'\in I\subseteq Q_i$ for all $i$, so $r+Q_i=r'+Q_i$ for all $i$. This is injective, since $\varphi(r+I)=0$ implies $r\in Q_i$ for all $i$, i.e. $r\in\bigcap_{i=1}^s Q_i=I$. Thus by lemmas above,
+\[
+\ass(R/I)\subseteq\ass(M)=\bigcup_{i=1}^s \ass (R/Q_i)=\{P_1,\ldots,P_s\}.
+\]
+If the decomposition is irredundant, then for all $i,\ I\subsetneqq \bigcap_{j\neq i}Q_j$. Consider $0\neq \bigcap_{j\neq i} Q_j+I\subseteq R/I$ and $\varphi\left(\bigcap_{j\neq i} Q_j+I\right)$. Since $\varphi$ is injective, this is nonzero, but the $j$th coordinates are zero where $j\neq i$. So $\varphi|_{\bigcap_{j\neq i} Q_j+I}$ is an injective homomorphism to $R/Q_i$. Thus
+\[
+\ass\left(\bigcap_{j\neq i} Q_j+I\right)\subseteq \ass (R/Q_i)=\{P_i\}.
+\]
+Since $\ass\left(\bigcap_{j\neq i} Q_j+I\right)$ is nonempty by \ref{nzeromoduleshavenemptyass}, it's $\{P_i\}$. Now since
+\[
+\begin{aligned}
+\bigcap_{j\neq i} Q_j+I&\hookrightarrow R/I\\
+r+I&\mapsto r+I
+\end{aligned}
+\]
+is injective,
+\[
+\ass\left(\bigcap_{j\neq i} Q_j+I\right)\subseteq \ass(R/I),
+\]
+so $P_i\in\ass(R/I)$ for all $i$, i.e. $\{P_1,\ldots,P_s\}\subseteq \ass(R/I)$.
+\end{proof}
+
+\begin{flushright}
+\textit{Week 10, lecture 3 starts here}
+\end{flushright}
+
+\begin{defn}
+An associated prime $P$ of an $R$-module $M$ is \textit{minimal} if there is no $P'\subseteq P$ with $P'\in\ass(M)$.
+\end{defn}
+\begin{example}
+$\la x\ra\cap \la x^2,y\ra =I=\la x^2,xy\ra \subseteq \C[x,y]=R$. Then $\ass(R/I)=\{\la x\ra,\la x,y\ra\}$ where $\la x\ra$ is minimal and $\la x,y\ra$ is not.
+\end{example}
+
+\begin{defn}
+If $I=\bigcap Q_j$ is an irredundant primary decomposition with $\sqrt{Q_i}\neq \sqrt{Q_j}$ for $i\neq j$, then $Q_i$ is called the \textit{primary component} of $I$ corresponding to $P_i=\sqrt{Q_i}$.
+\end{defn}
+
+\begin{prop}
+Let $P$ be a minimal associated prime of an ideal $I$ in a Noetherian ring $R$. Then the $P$-primary component of $I$ does not depend on the choice of primary decomposition.
+\end{prop}
+
+\begin{proof}
+Let $I=\bigcap_{i=1}^s Q_i$ be an irredundant primary decomposition with $\sqrt{Q_i}\neq\sqrt{Q_j}$ for $i\neq j$, and $\sqrt{Q_s}=P$. Since $\bigcap_{i=1}^{s-1} Q_i\neq I$, there is $f\in \bigcap_{i=1}^{s-1} Q_i\backslash Q_s$. We may also assume $f\notin P$ since if $\bigcap_{i=1}^{s-1} Q_i\subseteq P$, then $Q_i\subseteq P$ for some $i$, so $\sqrt{Q_i}\subseteq P$ for some $i$, contradicting minimality. Then $(I:f^\infty)=\bigcap_{i=1}^s (Q_i:f^\infty)$. If $f\in Q_i$ then $(Q_i:f^\infty)=R$ since $1f\in Q_i$, so $(I:f^\infty)=(Q_s:f^\infty)$. If $g\in(Q_s:f^\infty)$ then $gf^m\in Q_s$ for some $m\geq 0$. Since $Q_s$ is primary, either $g\in Q_s$ or $(f^m)^l\in Q_s\subseteq P$ for some $l$, but then $f\in P$, so $g\in Q_s$, thus $(I:f^\infty)=(Q_s:f^\infty)=Q_s$.
+\end{proof}
+
+\begin{remark}
+The minimality assumption was essential. Consider $I=\la x^2\ra\cap\la x^3,y^2\ra=\la x^2\ra\cap \la x^3,x^2y^2,y^3\ra=\la x^3,x^2y^2\ra\subseteq \C[x,y]$.
+\end{remark}
 
 \end{document}
