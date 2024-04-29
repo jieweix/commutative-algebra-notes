@@ -979,7 +979,7 @@ An $R$-module $M$ is \textit{finitely generated} if it has a finite generating s
 \label{thm:generalCH}
 Let $M$ be a finitely generated $R$-module with $n$ generators and $\varphi:M\rightarrow M$ an $R$-module homomorphism. Suppose $I$ is an ideal of $R$ with $\varphi(M)\subseteq IM:=\la rm:r\in I,m\in M\ra$. Then $\varphi$ satisfies a relation of the form
 \[
-\varphi^n + a_1 \varphi^{n-1} + a_{n-1}\varphi + a_n=0 \in\End(M) \text{ where } a_i\in I.
+\varphi^n + a_1 \varphi^{n-1} + \cdots + a_{n-1}\varphi + a_n=0 \in\End(M) \text{ where } a_i\in I^i.
 \]
 \end{thm}
 
@@ -1629,12 +1629,6 @@ We have $\sqrt Q=P$. If $r\in R\backslash Q$ and $s\in R$ with $rs\in Q$, then $
 $\displaystyle \ass\left(\frac{\C[x,y]}{\la x^2,y\ra}\right)=\{\la x,y\ra\}$ since $\la x^2,y\ra$ is $\la x,y\ra$-primary.
 \end{example}
 
-\begin{thm}
-Let $R$ be Noetherian and $I=Q_1\cap \cdots \cap Q_s$ be a primary decomposition where $Q_i$ is $P_i$-primary. Then $\ass(R/I)\subseteq\{P_1,\ldots,P_s\}$. If the decomposition is irredundant then one has equality.
-
-This gives us a way to get a minimal primary decomposition from any decomposition.
-\end{thm}
-
 \begin{lemma}
 \label{lemma:injthenasssubset}
 If $\varphi:M\rightarrow N$ is injective then $\ass(M)\subseteq\ass(N)$.
@@ -1694,6 +1688,8 @@ Let $R$ be Noetherian and $I=Q_1\cap\cdots\cap Q_s$ a primary decomposition with
 \]
 and if the decomposition is irredundant then one has equality.
 \end{thm}
+
+This gives us a way to get a minimal primary decomposition from any decomposition.
 
 \begin{proof}
 Each $R/Q_i$ is an $R$-module, so we can form the direct sum $M=\bigoplus_{i=1}^s R/Q_i$. Consider the $R$-module homomorphism
